@@ -8,8 +8,6 @@ category:
   - html5
 ---
 
-> 윤인성 선생님의 HTML5 저서를 참고했습니다.
-
 ## script, link
 
 ```
@@ -190,3 +188,5 @@ category:
   <legend>입력양식</legend>
 </fieldset>
 ```
+
+> 윤인성 선생님의 HTML5 저서를 참고했습니다.
