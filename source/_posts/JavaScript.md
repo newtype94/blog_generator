@@ -85,11 +85,11 @@ var로 모든 변수 선언
 - '100 + 50 은' + \${ 100+ 50 } + '이다' = '100 + 50은 150이다'
 - \${ 변수 }도 가능
 
-| 키워드 | 종류 | 성격                       |
-| ------ | ---- | -------------------------- |
-| var    | 변수 | 전역 스코프, 재선언 가능   |
-| let    | 변수 | 해당 스코프, 재선언 불가능 |
-| const  | 상수 | 해당 스코프, 재선언 불가능 |
+| 키워드   | 종류  | 성격              |
+| ----- | --- | --------------- |
+| var   | 변수  | 전역 스코프, 재선언 가능  |
+| let   | 변수  | 해당 스코프, 재선언 불가능 |
+| const | 상수  | 해당 스코프, 재선언 불가능 |
 
 ## 조건문
 
@@ -232,11 +232,11 @@ function 함수이름(매개변수, 매개변수, 매개변수) {
 
 ### Array() 함수
 
-| 메서드               | 기능                            |
-| -------------------- | ------------------------------- |
-| Array()              | 빈 배열을 만듬                  |
+| 메서드                  | 기능                   |
+| -------------------- | -------------------- |
+| Array()              | 빈 배열을 만듬             |
 | Array(number)        | number크기를 가지는 배열을 만듬 |
-| Array(any, ..., any) | 입력된 매개변수로 배열을 만듬   |
+| Array(any, ..., any) | 입력된 매개변수로 배열을 만듬     |
 
 ### 가변 인자 함수
 
@@ -322,12 +322,12 @@ test_2();
 
 ### 내장 함수 - 타이머 함수
 
-| 메서드                             | 기능                               |
-| ---------------------------------- | ---------------------------------- |
-| setTimeout(function, millisecond)  | 일정 시간 후 함수를 한 번 실행     |
+| 메서드                                | 기능                  |
+| ---------------------------------- | ------------------- |
+| setTimeout(function, millisecond)  | 일정 시간 후 함수를 한 번 실행  |
 | setInterval(function, millisecond) | 일정 시간마다 함수를 반복해서 실행 |
-| clearTimeout(id)                   | setTimeout 해제                    |
-| clearInterval(id)                  | setInterval 해제                   |
+| clearTimeout(id)                   | setTimeout 해제       |
+| clearInterval(id)                  | setInterval 해제      |
 
 setTimeout 설정과 동시에 id생성하기
 
@@ -337,14 +337,14 @@ var id = setTimeout(function, millisecond);
 
 ### 내장 함수 - 인코딩과 디코딩 함수
 
-| 메서드                           | 기능                                            |
-| -------------------------------- | ----------------------------------------------- |
-| escape()                         | 적절한 정도로 인코딩                            |
-| unescape()                       | 적절한 정도로 디코딩                            |
-| encodeURI(uri)                   | 최소한의 문자만 인코딩                          |
-| decodeURI(encodedURI)            | 최소한의 문자만 디코딩                          |
+| 메서드                              | 기능                           |
+| -------------------------------- | ---------------------------- |
+| escape()                         | 적절한 정도로 인코딩                  |
+| unescape()                       | 적절한 정도로 디코딩                  |
+| encodeURI(uri)                   | 최소한의 문자만 인코딩                 |
+| decodeURI(encodedURI)            | 최소한의 문자만 디코딩                 |
 | encodeURIComponent(uriComponent) | 문자 대부분을 모두 인코딩 (현재 가장 많이 쓰임) |
-| decodeURIComponent(encodedURI)   | 문자 대부분을 모두 디코딩                       |
+| decodeURIComponent(encodedURI)   | 문자 대부분을 모두 디코딩               |
 
 ### 내장 함수 - 코드 실행 함수
 
@@ -706,205 +706,244 @@ Rectangle.prototype.getArea = function(){
 ```
 
 ### 상속
+위의 "사각형 생성자 함수"와 많이 유사한 "정사각형 생성자 함수"를 만들고 싶다.
+```javascript
+function Square(length){
+	this.width = length;
+    this.height = length;
+}
+Square.prototype.getArea = function(){
+	return this.width*this.height;
+};
+```
+캡슐화 하기 전의 코드면 이렇게 복붙+수정으로 끝날 수도 있지만
+캡슐화까지 마친 코드라면 복붙+수정할 경우 줄이 길어지고 비효율적이므로
+다음과 같이 상속 기법을 활용하자
 
-    	위의 "사각형 생성자 함수"와 많이 유사한 "정사각형 생성자 함수"를 만들고 싶다.
-    		function Square(length){
-    			this.width = length;
-    			this.height = length;
-    		}
-    		Square.prototype.getArea = function(){
-    			return this.width*this.height;
-    		};
-    	캡슐화 하기 전의 코드면 이렇게 복붙+수정으로 끝날 수도 있지만
-    	캡슐화까지 마친 코드라면 복붙+수정할 경우 줄이 길어지고 비효율적이므로
-    	다음과 같이 상속 기법을 활용하자
-    		function Square(length){
-    			this.base = Rectangle; // base라는 속성에 생성자함수 넣어줌
-    			this.base(length, length); // 함수가 된 base속성을 실행
-    		}
-    		Square.prototype = Rectangle.prototype; // 프로토타입 복사
-    			==> 여기까지 하고, Square.prototype.constructor() 메서드를 출력하면, 생성자함수 Square가 아니라 생성자함수 Rectangle을 가리킨다.
-    			그대로 따왔기 때문이다.
-    	그래서 Square.prototype의 생성자 함수를 Square(자기자신)으로 재정의해줘야 한다.
-    		Square.prototype.constructor = Square; // 프로토타입 복사 후 재정의
-    	만약 모든 상속과정이 잘 이루어 졌다면
-    		var square = new Square(5);
-    		alert(square instanceof Rectangle);
-    			==> true를 출력할것이다. 이는 객체 square가 생성자 함수 Rectangle로부터 만들어졌음을 의미하고, 생성자 함수 Square가 Rectangle의 상속을 받았음을 의미한다.
+```javascript
+function Square(length){
+	this.base = Rectangle; // base라는 속성에 생성자함수 넣어줌
+	this.base(length, length); // 함수가 된 base속성을 실행
+}
+Square.prototype = Rectangle.prototype; // 프로토타입 복사
+```
+여기에서 Square.prototype.constructor() 메서드를 출력하면, 생성자함수 Square가 아니라 생성자함수 Rectangle을 가리킨다. 그대로 따왔기 때문이다.
+그래서 Square.prototype의 생성자 함수를 Square(자기자신)으로 재정의해줘야 한다.
 
-#####
+```javascript
+Square.prototype.constructor = Square; // 프로토타입 복사 후 재정의
+var square = new Square(5);
+alert(square instanceof Rectangle);
+```
+만약 모든 상속과정이 잘 이루어 졌다면 true를 출력할것이다. 
+이는 객체 square가 생성자 함수 Rectangle로부터 만들어졌음을 의미하고, 생성자 함수 Square가 Rectangle의 상속을 받았음을 의미한다.
 
-기본 내장 객체
+## 기본 내장 객체
 
-#####
+### 기본 자료형과 객체의 차이점
+기본 자료형 - 자바스크립트의 6가지 자료형 중 숫자, 문자열, 불
+1. 기본자료형으로 선언
+var primitiveNumber = 273;
+기본자료형이어서 속성이나 메서드가 없지만,
+사용하려고하면 자동으로 객체로 변환이 되어 사용가능해짐
+객체 자체는 아니기 때문에 속성과 메서드는 추가할 수 없음
+2. 생성자함수를 사용하여 객체로 선언
+var objectNumber = new Number(273);
+속성과 메서드를 프로토타입으로 추가할 수 있음
 
-    기본 자료형과 객체의 차이점
-    	기본 자료형 - 자바스크립트의 6가지 자료형 중 숫자, 문자열, 불
-    		1. 기본자료형으로 선언
-    			var primitiveNumber = 273;
-    			기본자료형이어서 속성이나 메서드가 없지만,
-    			사용하려고하면 자동으로 객체로 변환이 되어 사용가능해짐
-    			객체 자체는 아니기 때문에 속성과 메서드는 추가할 수 없음
-    		2. 생성자함수를 사용하여 객체로 선언
-    			var objectNumber = new Number(273);
-    			속성과 메서드를 프로토타입으로 추가할 수 있음
+### Object 객체
+- 자바스크립트의 최상위 객체이자, Object 생성자 함수로 만든 인스턴스
+- 자바스크립트의 모든 내장 객체는 Object 객체를 기본으로 만들어짐
+- Object객체의 속성,메서드는 모든 객체에서 사용 가능하고,
+- Object객체에 속성,메서드를 새로 추가하면 마찬가지로 모든 객체에서 사용 가능하다.
+| 메서드                        | 기능                         |
+| -------------------------- | -------------------------- |
+| constructor()              | 객체의 생성자 함수를 나타냄            |
+| hasOwnProperty(name)       | 객체가 name 속성이 있는지 확인        |
+| isPrototypeof(object)      | 객체가 object의 프로토타입인지 검사     |
+| propertyIsEnumerable(name) | 반복문으로 열거할 수 있는지 확인         |
+| toLocaleString()           | 객체를 호스트 환경에 맞는 언어의 문자열로 바꿈 |
+| toString()                 | 객체를 문자열로 바꿈                |
+| valueOf()                  | 객체의 값을 나타냄                 |
+    	
+typeof 와 constructor() 자료형 구분
 
-    Object 객체
-    	자바스크립트의 최상위 객체이자, Object 생성자 함수로 만든 인스턴스
-    	자바스크립트의 모든 내장 객체는 Object 객체를 기본으로 만들어짐
-    	Object객체의 속성,메서드는 모든 객체에서 사용 가능하고,
-    	Object객체에 속성,메서드를 새로 추가하면 마찬가지로 모든 객체에서 사용 가능하다.
-    	+++메서드+++
-    	+ constructor()	객체의 생성자 함수를 나타냄
-    	+ hasOwnProperty(name)	객체가 name 속성이 있는지 확인
-    	+ isPrototypeof(object)	객체가 object의 프로토타입인지 검사
-    	+ propertyIsEnumerable(name)	반복문으로 열거할 수 있는지 확인
-    	+ toLocaleString()	객체를 호스트 환경에 맞는 언어의 문자열로 바꿈
-    	+ toString()	객체를 문자열로 바꿈
-    	+ valueOf()	객체의 값을 나타냄
-    	++++++++++
-    	typeof 와 constructor() 자료형 구분
-    		var A = 273;
-    		var B = new Number(273);
-    		alert(typeof(A)); // number 출력
-    		alert(typeof(B)); // object 출력
-    		alert(A.constructor); // Number 출력
-    		alert(B.constructor); // Number 출력
+```javascript
+var A = 273;
+var B = new Number(273);
+alert(typeof(A)); // number 출력
+alert(typeof(B)); // object 출력
+alert(A.constructor); // Number 출력
+alert(B.constructor); // Number 출력
+```
+### Number 객체
+Object객체의 7가지 메서드에, 3가지 메서드를 추가로 가짐
 
-    Number 객체
-    	Object객체의 7가지 메서드에, 3가지 메서드를 추가로 가짐
-    	+++메서드+++
-    	+ toExponential()	숫자를 지수 표시로 나타낸 문자열을 리턴
-    	+ toFixed()	숫자를 고정 소수점 표시로 나타낸 문자열을 리턴
-    	+ toPrecision()	숫자를 길이에 따라 지수 표시 또는 고정 소수점 표시로 나타낸 문자열을 리턴
-    	++++++++++
-    	+++속성+++
-    	+ MAX_VALUE	자바스크립트의 숫자가 나타낼 수 있는 최대 숫자
-    	+ MIN_VALUE	자바스크립트의 숫자가 나타낼 수 있는 최소 숫자
-    	+ NaN	자바스크립트의 숫자로 나타낼 수 없는 숫자
-    	+ POSITIVE_INFINITY	양의 무한대 숫자
-    	+ NEGATIVE_INFINITY	음의 무한대 숫자
-    	+++++++++
-    	예시
-    		var a = 123.12345;
-    		alert(a.toFixed(2)); // 123.12출력
+| 메서드             | 기능                                         |
+| --------------- | ------------------------------------------ |
+| toExponential() | 숫자를 지수 표시로 나타낸 문자열을 리턴                     |
+| toFixed()       | 숫자를 고정 소수점 표시로 나타낸 문자열을 리턴                 |
+| toPrecision()   | 숫자를 길이에 따라 지수 표시 또는 고정 소수점 표시로 나타낸 문자열을 리턴 |
+    	
+| 속성                | 기능                         |
+| ----------------- | -------------------------- |
+| MAX_VALUE         | 자바스크립트의 숫자가 나타낼 수 있는 최대 숫자 |
+| MIN_VALUE         | 자바스크립트의 숫자가 나타낼 수 있는 최소 숫자 |
+| NaN               | 자바스크립트의 숫자로 나타낼 수 없는 숫자    |
+| POSITIVE_INFINITY | 양의 무한대 숫자                  |
+| NEGATIVE_INFINITY | 음의 무한대 숫자                  |
+    	
+```javascript
+var a = 123.12345;
+alert(a.toFixed(2)); // 123.12출력
+```
 
-    String 객체
-    	+++속성+++
-    	+ length	문자열의 길이 반환
-    	++++++++++
-    	+++메서드+++
-    	+ charAt(position)	position에 위치하는 문자를 리턴
-    	+ charCodeAt(position)	position에 위치하는 문자의 유니코드 번호를 리턴
-    	+ concat(args)	매개변수로 입력한 문자열을 이어서 리턴
-    	+ indexOf(searchString, position)	앞에서부터 일치하는 문자열의 위치를 리턴
-    	+ lastIndexOf(searchString, position)	뒤에서부터 일치하는 문자열의 위치를 리턴
-    	+ match(regExp)	문자열 안에 regExp가 있는지 확인
-    	+ replace(regExp, replacement)	 regEXP를 replacement로 바꾼 뒤 리턴
-    	+ search(regExp)	regExp와 일치하는 문자열의 위치를 리턴
-    	+ slice(start, end)	특정 위치의 문자열을 추출해 리턴
-    	+ split(separator, limit)	separator로 문자열을 잘라서 배열을 리턴
-    	+ substr(start, count)	start부터 count만큼 문자열을 잘라서 리턴
-    	+ substring(start, end)	start부터 end까지 문자열을 잘라서 리턴
-    	+ toLowerCase()	문자열을 소문자로 바꾸어 리턴
-    	+ toUpperCase()	문자열을 대문자로 바꾸어 리턴
-    	++++++++++
-    	+++HTML 관련 메서드+++
-    	+ anchor()	a 태그로 문자열을 감싸 리턴
-    	+ big()	big 태그로 문자열을 감싸 리턴
-    	+ blink()	blink 태그로 문자열을 감싸 리턴
-    	+ bold()	b 태그로 문자열을 감싸 리턴
-    	+ fixed()	tt 태그로 문자열을 감싸 리턴
-    	+ fontcolor(colorString)	font 태그로 문자열을 감싸고 color 속성을 주어 리턴
-    	+ fontsize(fontSize)	font 태그로 문자열을 감싸고 size 속성을 주어 리턴
-    	+ italics()	i 태그로 문자열을 감싸 리턴
-    	+ link(linkRef)	a태그에 href 속성을 지정해 리턴
-    	+ small()	small 태그로 문자열을 감싸 리턴
-    	+ strike()	strike 태그로 문자열을 감싸 리턴
-    	+ sub()	sub 태그로 문자열을 감싸 리턴
-    	+ sup()	sup 태그로 문자열을 감싸 리턴
-    	++++++++++
-    	기본적으로 String 객체의 메서드는 자기 자신을 변화시키지 않고 리턴한다.
-    	그래서 "메서드 체이닝"이 가능하다
-    	string으로 return된 값은 string의 메서드를 다 가져다 쓸 수 있고,
-    	만약 number로 return 된다면 number의 메서드를 다 가져다 쓸 수 있을것이다.
-    		var output = 'Hello';
-    		output = output.toLowerCase().substring(0,10).anchor('name');
-    		메서드 3개를 연속으로 사용해 보았다.
+### String 객체
+| 속성     | 기능         |
+| ------ | ---------- |
+| length | 문자열의 길이 반환 |
 
-    Array 객체
-    	Array 생성자 함수
-    		Array()	빈 배열을 만듬
-    		Array(number)	매개변수만큼의 크기를 가지는 배열을 만듬
-    		Array(any, ... , any)	매개변수로 배열을 만듬
-    	그래서 배열은 총 4가지 방법으로 만들 수 있음
-    		var array1 = ['김', '용', '훈']
-    		var array2 = new Array();
-    		var array3 = new Array(10);
-    		var array4 = new Array('김', '용', '훈');
-    	+++속성+++
-    	+ length	배열의 요소의 개수를 리턴
-    	+++++++++
-    	+++메서드+++
-    	+ concat()	매개변수로 입력한 배열의 요소를 모두 합쳐 배열로 만들어 리턴
-    	+ join()	배열안의 모든 요소를 문자열로 만들어 리턴
-    	+ pop()	배열의 마지막 요소를 제거하고 리턴
-    	+ push()	배열의 마지막 부분에 새로운 요소를 추가
-    	+ reverse()	배열의 요소 순서를 뒤집음
-    	+ slice()	요소의 지정한 부분을 리턴
-    	+ sort()	배열의 요소를 정렬
-    	+ splice()	요소의 지정한 부분을 삭제하고 삭제한 요소를 리턴
-    	++++++++++
-    	sort() 메서드 사용법
-    		기본적으로 "매개변수 두개를 받는 함수"가 매개변수로 들어간다.
-    			var array = [52, 273, 103, 32];
-    			array.sort( function(left, right){} );
-    		매개변수로 입력한 함수가 리턴하는 숫자의 부호에 따라 정렬방식이 결정된다.
-    			//오름차순 정렬
-    			array.sort( function(left, right){
-    				return left - right;
-    				});
-    			//내림차순 정렬
-    			array.sort( function(left, right){
-    				return right - left;
-    				});
-    		객체로 이루어진 배열일때 이런식으로 활용가능 (= 총점을 정렬하기)
-    			students = (student_A, student_B, student_C);
-    			students.sort(function(left, right){
-    				return right.getSum() - left.getSum();
-    			});
+| 메서드                                 | 기능                             |
+| ----------------------------------- | ------------------------------ |
+| charAt(position)                    | position에 위치하는 문자를 리턴          |
+| charCodeAt(position)                | position에 위치하는 문자의 유니코드 번호를 리턴 |
+| concat(args)                        | 매개변수로 입력한 문자열을 이어서 리턴          |
+| indexOf(searchString, position)     | 앞에서부터 일치하는 문자열의 위치를 리턴         |
+| lastIndexOf(searchString, position) | 뒤에서부터 일치하는 문자열의 위치를 리턴         |
+| match(regExp)                       | 문자열 안에 regExp가 있는지 확인          |
+| replace(regExp, replacement)        | regEXP를 replacement로 바꾼 뒤 리턴   |
+| search(regExp)                      | regExp와 일치하는 문자열의 위치를 리턴       |
+| slice(start, end)                   | 특정 위치의 문자열을 추출해 리턴             |
+| split(separator, limit)             | separator로 문자열을 잘라서 배열을 리턴     |
+| substr(start, count)                | start부터 count만큼 문자열을 잘라서 리턴    |
+| substring(start, end)               | start부터 end까지 문자열을 잘라서 리턴      |
+| toLowerCase()                       | 문자열을 소문자로 바꾸어 리턴               |
+| toUpperCase()                       | 문자열을 대문자로 바꾸어 리턴               |
+    	
+| HTML 관련 메서드            | 기능                                |
+| ---------------------- | --------------------------------- |
+| anchor()               | a 태그로 문자열을 감싸 리턴                  |
+| big()                  | big 태그로 문자열을 감싸 리턴                |
+| blink()                | blink 태그로 문자열을 감싸 리턴              |
+| bold()                 | b 태그로 문자열을 감싸 리턴                  |
+| fixed()                | tt 태그로 문자열을 감싸 리턴                 |
+| fontcolor(colorString) | font 태그로 문자열을 감싸고 color 속성을 주어 리턴 |
+| fontsize(fontSize)     | font 태그로 문자열을 감싸고 size 속성을 주어 리턴  |
+| italics()              | i 태그로 문자열을 감싸 리턴                  |
+| link(linkRef)          | a태그에 href 속성을 지정해 리턴              |
+| small()                | small 태그로 문자열을 감싸 리턴              |
+| strike()               | strike 태그로 문자열을 감싸 리턴             |
+| sub()                  | sub 태그로 문자열을 감싸 리턴                |
+| sup()                  | sup 태그로 문자열을 감싸 리턴                |
 
-    Date 객체
-    	생성자 함수에 매개변수를 입력하지 않으면 현재 시각으로 초기화
-    		var date = new Date();
-    		alert(date); // 현재 시간 출력
-    	매개변수를 입력하여 객체 생성
-    		1. 문자열을 사용
-    			var date = new Date('December 9, 1991');
-    			var date = new Date('December 9, 1991 02:24:23');
-    		2. 숫자를 사용 = 연, 월-1, 일, 시, 분, 초, 밀리 초 순서로 입력하고 싶은데 까지 입력
-    			var date = new Date(1991, 11, 9);
-    			var date = new Date(1991, 11, 9, 2, 24, 23);
-    		3. Unix time을 사용
-    			var date = new Date(2732741033257);
-    	+++메서드+++
-    	+ get~으로 시작하는 메서드 20가지정도
-    	+ set~으로 시작하는 메서드 20가지정도
-    	+ to~~String인 메서드 20가지정도
-    	+++++++++++
-    	날짜 간격 구하기
-    		var now = new Date();
-    		var before = new Date('January 22, 1994');
-    		var interval = now.getTime() - before.getTime();
-    		interval = Math.floor(interval / (1000*60*60*24) ); // = 9120(일)
-    	날짜 간격 구하는 메서드를 프로토타입으로 추가하기
-    		Date.prototype.getInterval = ~~~~~~
+기본적으로 String 객체의 메서드는 자기 자신을 변화시키지 않고 리턴한다.
+그래서 "메서드 체이닝"이 가능하다
+string으로 return된 값은 string의 메서드를 다 가져다 쓸 수 있고,
+만약 number로 return 된다면 number의 메서드를 다 가져다 쓸 수 있을것이다.
+```javascript
+var output = 'Hello';
+output = output.toLowerCase().substring(0,10).anchor('name');
+```
+이런식으로 메서드 3개를 연속으로 사용할 수 있다.
 
-    Math 객체
-    	+++속성+++
-    	+ E					2.718281828459045
-    	+ LN2				0.6931471805599453
-    	+ LN10			2.302585092994046
+### Array 객체
+
+| 만드는 방법                | 상세 기능                  |
+| --------------------- | ---------------------- |
+| Array                 | 생성자 함수                 |
+| Array()               | 빈 배열을 만듬               |
+| Array(number)         | 매개변수만큼의 크기를 가지는 배열을 만듬 |
+| Array(any, ... , any) | 매개변수로 배열을 만듬           |
+
+그래서 배열은 총 4가지 방법으로 만들 수 있음
+```javascript
+var array1 = ['김', '용', '훈']
+var array2 = new Array();
+var array3 = new Array(10);
+var array4 = new Array('김', '용', '훈');
+```
+
+| 속성     | 기능             |
+| ------ | -------------- |
+| length | 배열의 요소의 개수를 리턴 |
+    	
+| 메서드       | 기능                                 |
+| --------- | ---------------------------------- |
+| concat()  | 매개변수로 입력한 배열의 요소를 모두 합쳐 배열로 만들어 리턴 |
+| join()    | 배열안의 모든 요소를 문자열로 만들어 리턴            |
+| pop()     | 배열의 마지막 요소를 제거하고 리턴                |
+| push()    | 배열의 마지막 부분에 새로운 요소를 추가             |
+| reverse() | 배열의 요소 순서를 뒤집음                     |
+| slice()   | 요소의 지정한 부분을 리턴                     |
+| sort()    | 배열의 요소를 정렬                         |
+| splice()  | 요소의 지정한 부분을 삭제하고 삭제한 요소를 리턴        |
+
+- sort() 메서드 사용법
+	기본적으로 "매개변수 두개를 받는 함수"가 매개변수로 들어간다.
+	```javascript
+	var array = [52, 273, 103, 32];
+	array.sort( function(left, right){} );
+	```
+
+    매개변수로 입력한 함수가 리턴하는 숫자의 부호에 따라 정렬방식이 결정된다.
+    ```javascript
+	//오름차순 정렬
+    array.sort( function(left, right){
+    	return left - right;
+    });
+    //내림차순 정렬
+    array.sort( function(left, right){
+    	return right - left;
+	});
+	```
+    객체로 이루어진 배열일때 이런식으로 활용가능 (= 총점을 정렬하기)
+    ```javascript
+    students = (student_A, student_B, student_C);
+    students.sort(function(left, right){
+    	return right.getSum() - left.getSum();
+    });
+	```
+### Date 객체
+생성자 함수에 매개변수를 입력하지 않으면 현재 시각으로 초기화
+```javascript
+var date = new Date();
+alert(date); // 현재 시간 출력
+```
+매개변수를 입력하여 객체 생성
+```javascript
+1. 문자열을 사용
+	var date = new Date('December 9, 1991');
+	var date = new Date('December 9, 1991 02:24:23');
+2. 숫자를 사용 = 연, 월-1, 일, 시, 분, 초, 밀리 초 순서로 입력하고 싶은데 까지 입력
+	var date = new Date(1991, 11, 9);
+	var date = new Date(1991, 11, 9, 2, 24, 23);
+3. Unix time을 사용
+	var date = new Date(2732741033257);
+```
+
+메서드
+1. get~으로 시작하는 메서드 20가지정도
+2. set~으로 시작하는 메서드 20가지정도
+3. to~~String인 메서드 20가지정도
+
+날짜 간격 구하기
+```javascript
+var now = new Date();
+var before = new Date('January 22, 1994');
+var interval = now.getTime() - before.getTime();
+interval = Math.floor(interval / (1000*60*60*24) ); // = 9120(일)
+```
+날짜 간격 구하는 메서드를 프로토타입으로 추가하기
+```javascript
+Date.prototype.getInterval = ~~~~~~
+```
+
+### Math 객체
+| 속성  |     |
+| --- | --- |
++ E					2.718281828459045
++ LN2				0.6931471805599453
++ LN10			2.302585092994046
     	+ LOG2E		1.4426950408889633
     	+ LOG10E		0.4342944819032518
     	+ PI					3.141592653589793
