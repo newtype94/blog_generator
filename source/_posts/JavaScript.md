@@ -8,9 +8,9 @@ category:
   - javascript
 ---
 
-## 기본문법
+# 기본문법
 
-### 시작
+## 시작
 
 식별자 = 변수명 or 함수명
 
@@ -42,28 +42,28 @@ var로 모든 변수 선언
 복합 대입 연산자
 +=, -=, \*=, /=, %=
 
-### 증감 연산자
+## 증감 연산자
 
 - 변수++, 변수--(후위)
 - ++변수, --변수(전위)
 
-### 자료형 검사
+## 자료형 검사
 
 - typeof(값)
 - typeof(초기화되지 않은 변수) = undefined
 
-### 입력 받기
+## 입력 받기
 
 `prompt('나이 입력하샘', 'ex) 24살');` //문자열로 입력받음
 `var input = confirm('수락할거임?');` //확인,취소 버튼이 뜨고 불리언으로 입력받음
 
-### 숫자 <-> 문자열 자료형 변환
+## 숫자 <-> 문자열 자료형 변환
 
 - String(숫자) : 문자열이 됨
 - Number(문자열) : 숫자가 됨
 - Number(문자열) : 숫자로 변환 불가할 경우 NaN으로 출력됨
 
-### 불 자료형 변환
+## 불 자료형 변환
 
 이 5가지가 false이고 나머지는 모두 true
 
@@ -73,13 +73,13 @@ var로 모든 변수 선언
 - Boolean(null)
 - Boolean(undefined)
 
-### 일치 연산자
+## 일치 연산자
 
 - === : 양쪽 변의 자료형과 값이 일치
 - !== : 양쪽 변의 자료형과 값이 다름
 - ex) 0 == false는 자동 형 변환을 거쳐 true로 인식되지만 0 === false는 false로 인식됨
 
-### ECMAScript6에 추가된 것
+## ECMAScript6에 추가된 것
 
 - 템플릿 문자열 = \${ 표현식 } // 문자열이 만들어질 때 표현식이 계산되어 들어감
 - '100 + 50 은' + \${ 100+ 50 } + '이다' = '100 + 50은 150이다'
@@ -91,7 +91,7 @@ var로 모든 변수 선언
 | let    | 변수 | 해당 스코프, 재선언 불가능 |
 | const  | 상수 | 해당 스코프, 재선언 불가능 |
 
-## 조건문
+# 조건문
 
 ```javascript
 	if (조건문) {
@@ -118,12 +118,12 @@ var로 모든 변수 선언
 	}
 ```
 
-### 삼항 연산자
+## 삼항 연산자
 
 - <불 표현식> ? <참일 때 실행하는 문장> : <거짓일 때 실행하는 문장>
 - EX) (number > 0) ? alert('양수') : alert('양수가 아님') ;
 
-### 짧은 조건문
+## 짧은 조건문
 
 연산자 뒤 문장이 영향이 있는지가 중요
 
@@ -134,7 +134,7 @@ true && alert("실행됨");
 false && alert("실행안됨");
 ```
 
-## 반복문
+# 반복문
 
 ```javascript
 	for(var i=0; i<반복횟수; i++){
@@ -157,7 +157,7 @@ false && alert("실행안됨");
 break 키워드 - switch문이나 반복문을 벗어날 때 사용
 continue 키워드 - 반복문에서 현재 반복 구간을 멈추고 다음 반복구간을 처음부터 시작함
 
-## 배열
+# 배열
 
 배열에 자료형 다 혼합시킬 수 있음
 
@@ -167,7 +167,7 @@ array.length // 배열의 길이 return
 array.push(마지막 값) // 배열의 마지막 부분에 값 추가
 ```
 
-### ECMAScript6에 추가된 것
+## ECMAScript6에 추가된 것
 
 기존의 for in 반복문은 반복 변수에 '요소'가 아니라 '인덱스'가 들어감
 
@@ -186,20 +186,20 @@ for (const element of ["a", "b", "c"]) {
 }
 ```
 
-## 함수
+# 함수
 
 - 익명함수
   - function () {};
 - 선언적함수
   - function 함수() {};
 
-### 익명함수 활용법
+## 익명함수 활용법
 
 ```javascript
 var 함수 = function() {};
 ```
 
-### 익명함수 간의 우선순위
+## 익명함수 간의 우선순위
 
 ```javascript
 var 함수 = function (){ alert('AAA') };
@@ -208,7 +208,7 @@ var 함수 = function (){ alert('BBB') };
 ==> BBB출력됨
 ```
 
-### 선언적함수와 익명함수 간의 우선순위
+## 선언적함수와 익명함수 간의 우선순위
 
 자바스크립트는 모든 코드를 읽기 전에 선언적 함수부터 읽는다
 
@@ -219,7 +219,7 @@ function 함수 () { alert('BBB') };
 ===> AAA출력됨
 ```
 
-### 매개변수와 반환값
+## 매개변수와 반환값
 
 정해진 매개변수외에 추가로 입력된 매개변수는 무시됨
 정해진 매개변수보다 적게 입력되었다면 그 자리는 undefined
@@ -230,7 +230,7 @@ function 함수이름(매개변수, 매개변수, 매개변수) {
 }
 ```
 
-### Array() 함수
+## Array() 함수
 
 | 메서드               | 기능                            |
 | -------------------- | ------------------------------- |
@@ -238,7 +238,7 @@ function 함수이름(매개변수, 매개변수, 매개변수) {
 | Array(number)        | number크기를 가지는 배열을 만듬 |
 | Array(any, ..., any) | 입력된 매개변수로 배열을 만듬   |
 
-### 가변 인자 함수
+## 가변 인자 함수
 
 매개변수의 개수가 변할 수 있는 함수
 
@@ -250,7 +250,7 @@ arguments는 입력받은 매개변수로 이루어진 배열이다.
 
 ex) sumAll(1,2,3)일 경우에 arguments[0]=1이다
 
-### 내부 함수
+## 내부 함수
 
 외부 함수의 내부에서만 작동하는 함수임
 
@@ -262,7 +262,7 @@ function <외부 함수>(){
 }
 ```
 
-### 콜백 함수
+## 콜백 함수
 
 매개변수로 전달되는 함수, 주로 익명함수로 선언한다.
 
@@ -286,7 +286,7 @@ function 열번(
 );
 ```
 
-### 클로저
+## 클로저
 
 지역 변수를 살려내기 위해 쓰는 기법
 
@@ -320,7 +320,7 @@ test_2();
 
 또한 이렇게 쓸 수도 있다.
 
-### 내장 함수 - 타이머 함수
+## 내장 함수 - 타이머 함수
 
 | 메서드                             | 기능                               |
 | ---------------------------------- | ---------------------------------- |
@@ -335,7 +335,7 @@ setTimeout 설정과 동시에 id생성하기
 var id = setTimeout(function, millisecond);
 ```
 
-### 내장 함수 - 인코딩과 디코딩 함수
+## 내장 함수 - 인코딩과 디코딩 함수
 
 | 메서드                           | 기능                                            |
 | -------------------------------- | ----------------------------------------------- |
@@ -346,7 +346,7 @@ var id = setTimeout(function, millisecond);
 | encodeURIComponent(uriComponent) | 문자 대부분을 모두 인코딩 (현재 가장 많이 쓰임) |
 | decodeURIComponent(encodedURI)   | 문자 대부분을 모두 디코딩                       |
 
-### 내장 함수 - 코드 실행 함수
+## 내장 함수 - 코드 실행 함수
 
 ```javascript
 eval(string) - string을 자바스크립트 코드로 실행합니다.
@@ -354,14 +354,14 @@ var willEval = "alert('KIM');";
 eval(willEval);
 ```
 
-### 내장 함수 - 숫자 확인 함수
+## 내장 함수 - 숫자 확인 함수
 
 ```javascript
 isFinite(number) - number가 무한한 값인지 확인
 isNaN(number) - number가 NaN인지 확인
 ```
 
-### 내장 함수 - 숫자 변환 함수
+## 내장 함수 - 숫자 변환 함수
 
 1000원 1.5\$를 변환
 
@@ -371,7 +371,7 @@ parseFloat(string)	string을 유리수로 바꿈	1000, 1.5
 Number(string)	string을 숫자로 바꿈	풀숫자가 아니면 바꿀수가 없음 NaN, NaN
 ```
 
-### 자바스크립트의 실행 순서
+## 자바스크립트의 실행 순서
 
 ```javascript
 alert("A");
@@ -415,7 +415,7 @@ for (var i = 0; i < 3; i++) {
 });
 ```
 
-### 기본 매개변수
+## 기본 매개변수
 
 매개변수를 입력하지 않았을 때 강제로 초기화하는 것을 기본 매개변수라고 함
 = 매개변수가 undefined 자료형이면 값을 넣겠다.
@@ -445,7 +445,7 @@ function test(a, b, c) {
 test(1, 40);
 ```
 
-## 객체
+# 객체
 
 객체 = 배열을 기반으로 만들어짐
 
@@ -487,7 +487,7 @@ var person = {
 person.go(서울); // 김용훈서울갔다
 ```
 
-### for in 반복문
+## for in 반복문
 
 객체의 모든 속성+속성값을 하나씩 출력
 
@@ -497,7 +497,7 @@ for (var key in product) {
 }
 ```
 
-### with 키워드
+## with 키워드
 
 ```javascript
 var product = {
@@ -525,7 +525,7 @@ with (product) {
 }
 ```
 
-### with 키워드 사용 시 변수 이름 충돌
+## with 키워드 사용 시 변수 이름 충돌
 
 경우 : 객체의 속성 이름과 전역 변수의 이름이 같다
 
@@ -541,7 +541,7 @@ with(product){
 }
 ```
 
-### 객체의 속성 추가
+## 객체의 속성 추가
 
 ```javascript
 var student = {};
@@ -561,7 +561,7 @@ student.toString = function() {
 };
 ```
 
-### 객체의 속성 제거
+## 객체의 속성 제거
 
 delete 키워드 사용
 
@@ -583,7 +583,7 @@ function makeStudent(name, k, m, e) {
 }
 ```
 
-### 객체들로 배열 구성하기
+## 객체들로 배열 구성하기
 
 ```javascript
 function makeStudent(name, k, m, e) {
@@ -595,9 +595,9 @@ students.push(makeStudent("김용훈", 100, 100, 100));
 students.push(makeStudent("김유림", 100, 100, 100));
 ```
 
-## 생성자
+# 생성자
 
-### 생성자 함수 선언
+## 생성자 함수 선언
 
 생성자 함수의 이름은 대문자로 시작하는 것이 관례
 
@@ -609,13 +609,13 @@ function <생성자 함수 이름>(){
 }
 ```
 
-### 객체 생성
+## 객체 생성
 
 ```javascript
 new <생성자 함수 이름>()
 ```
 
-### 예제
+## 예제
 
 ```javascript
 function Student(name, k, m, e) {
@@ -631,7 +631,7 @@ function Student(name, k, m, e) {
 var student = new Student("김용훈", 100, 100, 100);
 ```
 
-### prototype을 사용한 생성자 함수 선언
+## prototype을 사용한 생성자 함수 선언
 
 ```javascript
 function <생성자 함수 이름>(){
@@ -652,7 +652,7 @@ function <생성자 함수 이름>(){
    객체2 -> 속성 메모리 차지 ,,,
    프로토타입 공간 -> 메서드 메모리 차지
 
-### 캡슐화
+## 캡슐화
 
 실행엔 별 문제가 안된다 하더라도 개발자의 의도와 다르게 사용되는 경우가 있다.
 속성과 메서드에 대한 접근에 제한을 둠으로써 그걸 방지하는 기법
@@ -705,7 +705,7 @@ Rectangle.prototype.getArea = function(){
 };
 ```
 
-### 상속
+## 상속
 
 위의 "사각형 생성자 함수"와 많이 유사한 "정사각형 생성자 함수"를 만들고 싶다.
 
@@ -743,9 +743,9 @@ alert(square instanceof Rectangle);
 만약 모든 상속과정이 잘 이루어 졌다면 true를 출력할것이다.
 이는 객체 square가 생성자 함수 Rectangle로부터 만들어졌음을 의미하고, 생성자 함수 Square가 Rectangle의 상속을 받았음을 의미한다.
 
-## 기본 내장 객체
+# 기본 내장 객체
 
-### 기본 자료형과 객체의 차이점
+## 기본 자료형과 객체의 차이점
 
 기본 자료형 - 자바스크립트의 6가지 자료형 중 숫자, 문자열, 불
 
@@ -758,7 +758,7 @@ alert(square instanceof Rectangle);
    var objectNumber = new Number(273);
    속성과 메서드를 프로토타입으로 추가할 수 있음
 
-### Object 객체
+## Object 객체
 
 - 자바스크립트의 최상위 객체이자, Object 생성자 함수로 만든 인스턴스
 - 자바스크립트의 모든 내장 객체는 Object 객체를 기본으로 만들어짐
@@ -785,7 +785,7 @@ alert(A.constructor); // Number 출력
 alert(B.constructor); // Number 출력
 ```
 
-### Number 객체
+## Number 객체
 
 Object객체의 7가지 메서드에, 3가지 메서드를 추가로 가짐
 
@@ -808,7 +808,7 @@ var a = 123.12345;
 alert(a.toFixed(2)); // 123.12출력
 ```
 
-### String 객체
+## String 객체
 
 | 속성   | 기능               |
 | ------ | ------------------ |
@@ -862,7 +862,7 @@ output = output
 
 이런식으로 메서드 3개를 연속으로 사용할 수 있다.
 
-### Array 객체
+## Array 객체
 
 | 만드는 방법           | 상세 기능                                |
 | --------------------- | ---------------------------------------- |
@@ -920,7 +920,7 @@ students.sort(function(left, right) {
 });
 ```
 
-### Date 객체
+## Date 객체
 
 생성자 함수에 매개변수를 입력하지 않으면 현재 시각으로 초기화
 
@@ -963,7 +963,7 @@ interval = Math.floor(interval / (1000 * 60 * 60 * 24)); // = 9120(일)
 Date.prototype.getInterval = ~~~~~~
 ```
 
-### Math 객체
+## Math 객체
 
 | 속성    | 값                 |
 | ------- | ------------------ |
@@ -1012,7 +1012,7 @@ ECMAScript5 Array 객체
 | reduce()      | 배열의 요소가 하나가 될 때까지 요소를 왼쪽부터 두 개씩 묶는 함수를 실행   |
 | reduceRight() | 배열의 요소가 하나가 될 때까지 요소를 오른쪽부터 두 개씩 묶는 함수를 실행 |
 
-### indexOf() 메서드 예시
+## indexOf() 메서드 예시
 
 ```javascript
 var array = {1,2,3,4,5,5,4,3,2,1};
@@ -1022,7 +1022,7 @@ var output3 = array.lastIndexOf(4); // = 6
 var output4 = array.lastIndexOf(10); // = -1
 ```
 
-### forEach() 메서드 예시
+## forEach() 메서드 예시
 
 매개변수로 함수가 들어감
 
@@ -1036,7 +1036,7 @@ array.forEach( function(element, index, array){
 });
 ```
 
-### map() 메서드 예시
+## map() 메서드 예시
 
 매개변수로 함수가 들어감
 
@@ -1047,7 +1047,7 @@ var output = array.map(function (element) {
 }); // 배열이 제곱수로 바뀜 1,4,9, ...
 ```
 
-### filter() 메서드 예시
+## filter() 메서드 예시
 
 매개변수로 함수가 들어감
 
@@ -1058,7 +1058,7 @@ array = array.filter(function(element, index, array){
 }); // 트루로 리턴된것만 골라 배열 형성
 ```
 
-### every() 메서드와 some() 메서드 예시
+## every() 메서드와 some() 메서드 예시
 
 매개변수로 함수가 들어감
 
@@ -1071,7 +1071,7 @@ var output1 = array.every(lessThanFive); // false반환
 var output2 = array.some(lessThanFive); // true반환
 ```
 
-### reduce() 메서드와 reduceRight() 메서드 예시
+## reduce() 메서드와 reduceRight() 메서드 예시
 
 매개변수로 함수가 들어감
 
@@ -1083,7 +1083,7 @@ array.reduce(function(previousValue, currentValue, index, array){
 });
 ```
 
-### reduce() 메서드 결과
+## reduce() 메서드 결과
 
 묶인 건 자료형을 알 수 없으니 undefined
 
@@ -1099,7 +1099,7 @@ undefined : 2 : 1
 undefined : 1 : 0
 ```
 
-### reduce() 메서드 활용
+## reduce() 메서드 활용
 
 ```javascript
 var array = {1,2,3,4,5};
@@ -1108,13 +1108,13 @@ return previousValue + currentValue;
 }); // 15출력
 ```
 
-### ECMAScript5 String 객체
+## ECMAScript5 String 객체
 
 | 메서드 | 기능                         |
 | ------ | ---------------------------- |
 | trim() | 문자열 양쪽 끝의 공백을 제거 |
 
-### JSON객체
+## JSON객체
 
 JSON이란 자바스크립트 객체 형태를 갖는 문자열
 
@@ -1149,7 +1149,7 @@ var person = {
 alert(JSON.stringify(person)); // {"fact":"이것만변환됨"} 출력
 ```
 
-## 브라우저 객체 모델
+# 브라우저 객체 모델
 
 Browser Object Model = BOM = 웹 브라우저와 관련된 객체 집합 = 브라우저(플랫폼)에서 제공하는 기능
 
@@ -1162,7 +1162,7 @@ Browser Object Model = BOM = 웹 브라우저와 관련된 객체 집합 = 브�
 
 여기서 DOM을 제외한 5가지 객체의 집합을 BOM이라고 한다.
 
-### window 객체
+## window 객체
 
 - 브라우저 기반 최상위 객체
 - alert(), prompt() 함수 모두 window 객체의 메서드임 (이래서 JS에서 함수나 메서드 구분은 의미가 없음)
@@ -1223,7 +1223,7 @@ setInterval(function() {
   HTML페이지에 존재하는 모든 태그가 화면에 올라가는 순간 (= 로드가 완료되는 순간)
   -> 함수 실행
 
-### location 객체
+## location 객체
 
 | 속성     | 값                      | 예시                   |
 | -------- | ----------------------- | ---------------------- |
@@ -1256,7 +1256,7 @@ location 객체로 페이지를 새로고침 하는 5가지 방법
 4. location.replace(location);
 5. location.reload();
 
-### navigator 객체
+## navigator 객체
 
 | 속성        | 값                               |
 | ----------- | -------------------------------- |
@@ -1266,7 +1266,7 @@ location 객체로 페이지를 새로고침 하는 5가지 방법
 | platform    | 사용 중인 운영체제의 시스템 환경 |
 | userAgent   | 웹 브라우저의 전체 정보          |
 
-### screen 객체
+## screen 객체
 
 | 속성        | 값                             |
 | ----------- | ------------------------------ |
@@ -1287,7 +1287,7 @@ child.moveTo(0, 0);
 child.resizeTo(width, height);
 ```
 
-### Audio 객체
+## Audio 객체
 
 | 속성        | 값                 |
 | ----------- | ------------------ |
@@ -1323,7 +1323,7 @@ audio.src = "music/kalimba.mp3";
 </body>
 ```
 
-### 모바일 장치 구분
+## 모바일 장치 구분
 
 2가지 방법이 있음 : 서버에서 확인 or 클라이언트에서 확인
 2가지 방법 모두 userAgent이용
@@ -1348,7 +1348,7 @@ for (var i in smartPhones) {
 }
 ```
 
-### 모바일 장치의 방향
+## 모바일 장치의 방향
 
 ```javascript
 if (window.orientation == 0 || window.orientation == 180) {
@@ -1358,7 +1358,7 @@ if (window.orientation == 0 || window.orientation == 180) {
 }
 ```
 
-## 문서 객체 모델
+# 문서 객체 모델
 
 노드, 문서객체, 문서객체모델 용어 정리
 
@@ -1402,14 +1402,14 @@ window.onload = function() {
 2. 동적으로 문서 객체 생성
    자바스크립트로 원래 HTML페이지에 없던 문서객체를 생성
 
-### document 객체의 노드 생성
+## document 객체의 노드 생성
 
 | 메서드                 | 기능               |
 | ---------------------- | ------------------ |
 | createElement(tagName) | 요소노드를 생성    |
 | createTextNode(text)   | 텍스트 노드를 생성 |
 
-### 문서 객체의 노드 연결
+## 문서 객체의 노드 연결
 
 | 메서드            | 기능               |
 | ----------------- | ------------------ |
@@ -1426,7 +1426,7 @@ window.onload = function() {
 };
 ```
 
-### 텍스트 노드를 갖지 않고, 속성을 가지는 노드 생성
+## 텍스트 노드를 갖지 않고, 속성을 가지는 노드 생성
 
 ```javascript
 window.onload = function(){
@@ -1452,7 +1452,7 @@ setAttribute('user-property' 200); //웹표준에 없는 속성
 setAttribute('src', 'myImage.jpg'); //웹표준에 있는 속성도 사용가능
 ```
 
-### 노드 생성과 연결
+## 노드 생성과 연결
 
 문서 객체의 노드 생성+연결 속성
 
@@ -1470,7 +1470,7 @@ document.body.innerHTML = output;
 document.body.textContent = output; //태그도 문자처럼 그대로 출력
 ```
 
-### 문서 객체 가져오기
+## 문서 객체 가져오기
 
 | 메서드                                    | 기능                                            |
 | ----------------------------------------- | ----------------------------------------------- |
@@ -1495,7 +1495,7 @@ alert(output);
 -> 0 1 length item nameditem 등등 문서객체이외의 속성에도 접근한다.
 그래서 단순 for 반복문만 써야 한다.
 
-### 문서 객체의 스타일 조작
+## 문서 객체의 스타일 조작
 
 문서 객체의 style속성으로 스타일을 조작할 수 있다.
 
@@ -1518,7 +1518,7 @@ var 객체 = document.getElementById("객체");
 객체.style["fontFamily"] = "red";
 ```
 
-### 문서 객체 제거
+## 문서 객체 제거
 
 | 메서드             | 기능                         |
 | ------------------ | ---------------------------- |
@@ -1530,7 +1530,7 @@ var child = document.getElementById("child");
 parent.removeChild(child); //이런식으로 사용
 ```
 
-## 이벤트
+# 이벤트
 
 ex) onscroll, onclick, onkeydown, onkeypress, onkeyup, onchange, ...
 ex) window.onload = function(){}
@@ -1540,7 +1540,7 @@ ex) window.onload = function(){}
 - onload : 이벤트 속성(실제로 on으로 시작하는 모든 html의 속성은 이벤트 속성)
 - 이벤트 속성에 할당된 함수 : 이벤트 리스너 or 이벤트 핸들러
 
-### 이벤트를 연결하는 방법 = 이벤트 모델
+## 이벤트를 연결하는 방법 = 이벤트 모델
 
 - DOM Level 0
   - 인라인 이벤트 모델
@@ -1552,7 +1552,7 @@ ex) window.onload = function(){}
 - level2는 이벤트를 중복해서 연결할 수 있지만 브라우저 종류에 따라 방법이 다름
   ==> 이 단점들은 jquery를 통해 모두 커버 가능!
 
-### DOM LEVEL0 - 기본(고전) 이벤트 모델
+## DOM LEVEL0 - 기본(고전) 이벤트 모델
 
 ```javascript
 var image = document.getElementById("image");
@@ -1593,7 +1593,7 @@ window.onload = function() {
 };
 ```
 
-### 이벤트 발생 객체(<->이벤트 객체)
+## 이벤트 발생 객체(<->이벤트 객체)
 
 이벤트를 누가 발생시켰는지, 그 객체를 의미함
 이벤트 리스너 안에서 this 키워드를 사용해서 확인
@@ -1625,7 +1625,7 @@ window.onload = function() {
 
 ==>h1의 글씨와 배경이 주황+빨강으로 바뀜
 
-### 이벤트 객체
+## 이벤트 객체
 
 이벤트의 '누가'와 관련된 정보외의 다른 정보가 있음
 
@@ -1647,7 +1647,7 @@ window.onload = function() {
 
 ==>이벤트에 관한 정보들이 다 출력됨
 
-### 이벤트 강제 실행(많이 안 씀)
+## 이벤트 강제 실행(많이 안 씀)
 
 ```javascript
 //이벤트 속성에 이벤트 리스너가 정의되어 있으면
@@ -1656,7 +1656,7 @@ header.onclick = function() {};
 header.onclick();
 ```
 
-### DOM LEVEL0 - 인라인 이벤트 모델
+## DOM LEVEL0 - 인라인 이벤트 모델
 
 태그에 이벤트 속성을 부여, 이벤트 속성에 JS 코드를 적어줌
 이벤트 발생 시 JS 코드 실행
@@ -1686,7 +1686,7 @@ header.onclick();
 </body>
 ```
 
-### 디폴트 이벤트 제거
+## 디폴트 이벤트 제거
 
 일부 HTML태그는 이미 이벤트 리스너가 있음.
 ex)onclick을 이벤트 속성으로 가지는 태그들.. <a>, <submit>, ..., 평범한 <form>태그
@@ -1748,7 +1748,7 @@ window.onload = function(){
 <form onsubmit="return whenSubmit()">~~</form>
 ```
 
-### 이벤트 전달
+## 이벤트 전달
 
 다수의 이벤트가 동시에 발생할 경우, 이벤트 전달을 2가지 방식으로 한다.
 이벤트 버블링 : 자식노드에서 부모노드 순으로 이벤트 실행
@@ -1775,7 +1775,7 @@ window.onload = function(){
 
 -> p태그를 클릭하면 4개의 태그가 동시에 클릭되고, 4개의 이벤트가 동시에 발생
 
-### 이벤트 전달 막기
+## 이벤트 전달 막기
 
 이벤트 버블링 예시
 
@@ -1820,7 +1820,7 @@ document.getElementById("paragraph").onclick = function(e) {
 -> 인터넷 익스플로러는 이벤트 객체에 stopPropagation() 메서드가 없어서 조건문으로 에러 방지
 그 외 브라우저도 cancleBubble속성에 값만 넣는 거라 가능할 뿐 속성을 사용하려면 문제가 생길 수 있음
 
-### DOM LEVEL2 - 인터넷 익스플로러 이벤트 모델
+## DOM LEVEL2 - 인터넷 익스플로러 이벤트 모델
 
 ```javascript
 attachEvent(eventProperty, eventListener);
@@ -1874,7 +1874,7 @@ window.onload = function() {
 };
 ```
 
-### DOM LEVEL2 - 표준 이벤트 모델
+## DOM LEVEL2 - 표준 이벤트 모델
 
 웹 표준 단체 W3C에서 공식적으로 지정함
 IE모델과 마찬가지로 이벤트 하나에 여러 가지 이벤트 리스너 추가
@@ -1898,7 +1898,7 @@ this.innerHTML += "+";
 
 removeEventListener() 메서드는 표준 이벤트 모델의 detachEvent() 메서드와 사용법이 똑같음
 
-### DOM LEVEL2 이벤트 모델의 통합적 사용
+## DOM LEVEL2 이벤트 모델의 통합적 사용
 
 ```javascript
 var header = document.getElementById("my-header");
@@ -1917,13 +1917,13 @@ if(heaaer.attachEvent){
 }
 ```
 
-## 예외 처리
+# 예외 처리
 
-### 기본 예외 처리
+## 기본 예외 처리
 
     	예외가 발생하지 않게 사전에 해결하는 것(if문으로 경우의 수 고려)
 
-### 고급 예외 처리
+## 고급 예외 처리
 
 ```javascript
 try {
@@ -1946,7 +1946,7 @@ try {
 }
 ```
 
-### 예외 객체
+## 예외 객체
 
 catch의 괄호안에 입력하는 식별자 (exception, e로 쓰임)
 타 언어에 비해 활용하는 경우가 적음
@@ -1978,7 +1978,7 @@ stack : RangeError : 배열의 길이는 유한한 양의 정수이어야 합니
 at Global code (http://localhost:56926/HTMLPage1.html:1:26)
 ```
 
-### 에러와 예외
+## 에러와 예외
 
 예외 : try-catch 구문으로 해결할 수 있음
 에러 : try-catch 구문으로 해결할 수 없음(문법 오류 같은 것)
@@ -1992,7 +1992,7 @@ try{
 }
 ```
 
-### 예외 강제 발생
+## 예외 강제 발생
 
 throw 키워드
 
@@ -2036,7 +2036,7 @@ try {
 }
 ```
 
-### try catch finally에서 finally 를 쓰는 이유
+## try catch finally에서 finally 를 쓰는 이유
 
 finally 가 없다면,
 
