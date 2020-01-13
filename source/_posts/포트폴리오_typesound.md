@@ -4,7 +4,6 @@ date: 2020-01-13 13:30:31
 tags:
   - react.js
   - typescript
-  - 포트폴리오
 category:
   - 포트폴리오
   - 개인프로젝트
