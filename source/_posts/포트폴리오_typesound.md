@@ -13,7 +13,7 @@ category:
 
 피아노 웹이다.
 많은 악기를 지원해서 어떤 곳에는 신디사이저 웹이라고 소개하기도 했다.
-<img src="/image/typesound/main.jpg" width="60%" title="30px" alt="홈"></img>
+<img src="/image/typesound/main.JPG" width="60%" title="30px" alt="홈"></img>
 
 ## 운영 플랫폼(서비스 종료)
 
@@ -48,14 +48,16 @@ PC, Mobile 반응형 : www.typesound.net
 
 2. 왼손 반주 패턴을 3가지 지원함
 
-   <img src="/image/typesound/playing_-.jpg" width="40%" title="30px" alt="playing_-"></img>
-   <img src="/image/typesound/playing_^.jpg" width="40%" title="30px" alt="playing_^"></img>
-   <img src="/image/typesound/playing_v.jpg" width="40%" title="30px" alt="playing_v"></img>
+   <img src="/image/typesound/playing_-.JPG" width="40%" title="30px" alt="playing_-"></img>
+   <img src="/image/typesound/playing_^.JPG" width="40%" title="30px" alt="playing_^"></img>
+   <img src="/image/typesound/playing_v.JPG" width="40%" title="30px" alt="playing_v"></img>
 
 3. 왼손 연주시 chord 마다 해당하는 소리를 mapping 해놓음
 
-   <img src="/image/typesound/sound_-.jpg" width="60%" title="30px" alt="sound_-"></img>
-   <img src="/image/typesound/sound_^.jpg" width="60%" title="30px" alt="sound_^"></img>
+   <img src="/image/typesound/sound_-.JPG" width="60%" title="30px" alt="sound_-"></img>
+   <img src="/image/typesound/sound_^.JPG" width="60%" title="30px" alt="sound_^"></img>
+
+`/src/lib/chordNotes.ts`
 
 ```typescript
 const chordNotes: { [x: string]: TSchordEnum[][] } = {
@@ -112,6 +114,8 @@ midi의 음원을 pre-rendering하였고, MIT 저작권으로 제공한다.
 기존의 피아노 웹들을 보면 대부분 flash를 사용하였고, 그나마 최신 웹이 jquery를 사용했다.
 reactJS의 "상태 관리"라는 메인 컨셉을 활용하여 개발하면 차별성이 있을 것이라고 생각했다.
 "키가 눌림"을 custom hook으로 정의하여, 문서객체마다 jquery onclick 이벤트를 연결할 일을 피했다.
+
+`/src/hooks/useKeyPress.ts`
 
 ```typescript
 function useKeyPress(targetKey: string) {
