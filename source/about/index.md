@@ -4,6 +4,11 @@
 2014년 입학
 2020년 8월 졸업예정
 
+## 포트폴리오
+
+개인프로젝트 [List](https://newtype94.github.io/categories/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4/%EA%B0%9C%EC%9D%B8%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/)
+협업프로젝트 [List](https://newtype94.github.io/categories/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4/%ED%98%91%EC%97%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/)
+
 ## 어학(올리는 중)
 
 토익 825 (2019.01.12)
@@ -12,8 +17,6 @@
 ## 군 경력
 
 육군 [정보보호병](https://namu.wiki/w/%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%EB%B3%91) 복무(2016.10~2018.07)
-
-<link>
 
 ## 자격증
 

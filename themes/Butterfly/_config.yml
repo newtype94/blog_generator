@@ -9,7 +9,6 @@ menu:
   전체 글: /archives/ || fa fa-archive
   태그: /tags/ || fa fa-tags
   카테고리: /categories/ || fa fa-folder-open
-  포트폴리오: /categories/포트폴리오/ || fa fa-book
   내 정보: /about/ || fa fa-heart
 
 # Favicon
