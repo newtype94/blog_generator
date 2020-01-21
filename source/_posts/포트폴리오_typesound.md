@@ -18,6 +18,7 @@ category:
 ## 운영 플랫폼(서비스 종료)
 
 PC, Mobile 반응형 : www.typesound.net
+Git : [Github](https://github.com/newtype94/Typesound)
 
 ## 사용 기술
 

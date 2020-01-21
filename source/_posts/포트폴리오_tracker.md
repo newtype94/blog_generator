@@ -17,6 +17,8 @@ category:
 2019년 2학기에 진행한 졸업프로젝트로, 정식 서비스로 출시하지는 않았다.
 **대신 경진대회에서 발표하여 장려상과 상금 100만원을 받았다!**
 
+Git : [Github](https://github.com/newtype94/Tracker)
+
 <img src="/image/tracker/구조도.jpg" width="90%" title="30px" alt="구조도"></img>
 
 ## 기간
