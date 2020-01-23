@@ -955,52 +955,88 @@ focus, focusout, scroll, click, mouseenter, mouseleave, keydown, keypress, ready
 
 ## 편한 이벤트 연결2
 
-+++메서드+++ + hover() mouseenter 이벤트와 mouseleave 이벤트를 동시에 연결
-++++++++++
+| 메서드  | 기능                                                |
+| ------- | --------------------------------------------------- |
+| hover() | mouseenter 이벤트와 mouseleave 이벤트를 동시에 연결 |
+
 2개의 이벤트를 연결하는 것이므로 매개변수로 이벤트리스너가 2개 필요함
-$(selector).hover(function(event){},function(event){});
-$('h1').hover({
-function(){$(this).addClass('reverse')}, //mouseenter 효과
-function(){$(this).removeClass('reverse')} //mouseleave 효과
+
+```javascript
+$(selector).hover(
+  function(event) {},
+  function(event) {}
+);
+$("h1").hover({
+  //mouseenter 효과
+  function() {
+    $(this).addClass("reverse");
+  },
+  //mouseleave 효과
+  function() {
+    $(this).removeClass("reverse");
+  }
 });
+```
 
 ## 이벤트 연결 제거
 
-+++메서드+++ + off() 이벤트 제거
-++++++++++
-3가지 형태로 사용 가능 1. $(selector).off() //객체와 관련된 모든 이벤트 제거 2. $(selector).off(eventName) //객체의 특정 이벤트와 관련된 모든 이벤트 제거 3. \$(selector).off(eventName, function) //객체의 특정 이벤트 리스너 제거
+| 메서드 | 기능        |
+| ------ | ----------- |
+| off()  | 이벤트 제거 |
+
+3가지 형태로 사용 가능
+
+1. `$(selector).off()` //객체와 관련된 모든 이벤트 제거
+2. `$(selector).off(eventName)` //객체의 특정 이벤트와 관련된 모든 이벤트 제거
+3. `$(selector).off(eventName, function)` //객체의 특정 이벤트 리스너 제거
 
 ## 일회성 이벤트 리스너
 
-$('h1').on('click', function(){
-$(this).html("Clicked, Listener disappeared");
-\$(this).off();
+```javascript
+$("h1").on("click", function() {
+  $(this).html("Clicked, Listener disappeared");
+  $(this).off();
 });
+```
 
 ## 일회성 이벤트 리스너
 
-+++메서드+++ + one() 이벤트를 한번만 연결
-++++++++++
-on()과 사용법이 같고, 이벤트가 한번만 연결됨
-매개변수 context
-jQuery에는 매개변수가 사실 두 개이다. \$(selector, context)
-selector : 선택자
-context : selector가 적용하는 범위를 한정, 일반적으로 이벤트와 함께 사용
-사용 예시 : 클릭된 div의 <h1>내용을 출력
+| 메서드 | 기능                 |
+| ------ | -------------------- |
+| one()  | 이벤트를 한번만 연결 |
 
+on()과 사용법이 같고, 이벤트가 한번만 연결됨
+
+## 매개변수 context
+
+jQuery에는 매개변수가 사실 두 개이다.
+\$(selector, context)
+
+- selector : 선택자
+- context : selector가 적용하는 범위를 한정, 일반적으로 이벤트와 함께 사용
+
+**EX : 클릭된 div의 h1 내용을 출력**
+
+```html
 <div><h1>first</h1></div>
 <div><h1>second</h1></div>
 <div><h1>third</h1></div>
-$('div').click(function(){
-var print = $('h1', this).text();
-alert(print);
-});
--> 그냥 $('h1').text() 하면 firstsecondthird 출력
-find() 메서드를 활용해도 같은 결과를 낼 수 있다
-$('div').click(function(){
-var print = $(this).find('h1').text();
-alert(print);
-});
+<script>
+  $("div").click(function() {
+    var print = $("h1", this).text();
+    alert(print);
+  });
+  // => 그냥 $('h1').text() 하면 firstsecondthird 출력
+
+  //find() 메서드를 활용해도 같은 결과를 낼 수 있다
+  $("div").click(function() {
+    var print = $(this)
+      .find("h1")
+      .text();
+    alert(print);
+  });
+</script>
+```
 
 ## 이벤트 객체
 
