@@ -1,5 +1,5 @@
 ---
-title: programmers 징검다리
+title: programmers 징검다리(푸는 중)
 date: 2020-02-06 12:37:01
 tags:
   - 알고리즘
