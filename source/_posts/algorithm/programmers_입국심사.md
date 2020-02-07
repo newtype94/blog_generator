@@ -8,9 +8,9 @@ category:
   - 프로그래머스
 ---
 
-# 분류 / 언어
+# 분류 / 레벨 / 언어
 
-이분탐색 / Javscript
+이분탐색 / LV.3 / Javscript
 
 # 설명
 
