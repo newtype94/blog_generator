@@ -3,9 +3,10 @@ title: programmers 다리를 지나는 트럭
 date: 2020-02-03 12:14:00
 tags:
   - 알고리즘
-category:
-  - 알고리즘
   - 프로그래머스
+category:
+  - 프로그래머스
+  - 스택, 큐
 ---
 
 # 분류 / 레벨 / 언어

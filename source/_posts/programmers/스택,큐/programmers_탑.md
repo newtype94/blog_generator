@@ -3,9 +3,10 @@ title: programmers 탑
 date: 2020-02-03 11:42:12
 tags:
   - 알고리즘
-category:
-  - 알고리즘
   - 프로그래머스
+category:
+  - 프로그래머스
+  - 스택, 큐
 ---
 
 # 분류 / 레벨 /언어

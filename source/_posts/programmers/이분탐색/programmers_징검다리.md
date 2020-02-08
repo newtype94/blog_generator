@@ -3,9 +3,10 @@ title: programmers 징검다리(푸는 중)
 date: 2020-02-06 12:37:01
 tags:
   - 알고리즘
-category:
-  - 알고리즘
   - 프로그래머스
+category:
+  - 프로그래머스
+  - 이분탐색
 ---
 
 # 분류 / 레벨 / 언어

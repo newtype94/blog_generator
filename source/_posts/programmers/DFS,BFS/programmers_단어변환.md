@@ -3,9 +3,10 @@ title: programmers 단어 변환
 date: 2020-02-07 17:29:31
 tags:
   - 알고리즘
-category:
-  - 알고리즘
   - 프로그래머스
+category:
+  - 프로그래머스
+  - DFS,BFS
 ---
 
 # 분류 / 레벨 / 언어

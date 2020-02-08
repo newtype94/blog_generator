@@ -3,9 +3,10 @@ title: programmers 입국심사
 date: 2020-02-05 17:24:14
 tags:
   - 알고리즘
-category:
-  - 알고리즘
   - 프로그래머스
+category:
+  - 프로그래머스
+  - 이분탐색
 ---
 
 # 분류 / 레벨 / 언어
