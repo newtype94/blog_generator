@@ -6,12 +6,12 @@ tags:
   - 프로그래머스
 category:
   - 프로그래머스
-  - 해시 set
+  - 해시
 ---
 
 # 분류 / 레벨 / 언어
 
-해시 set / LV.3 / Javscript
+해시 / LV.3 / Javscript
 
 # 설명
 
