@@ -5,7 +5,7 @@ tags:
   - 알고리즘
   - 프로그래머스
 category:
-  - 프로그래머스
+  - 프로그래머스 고득점 Kit
   - 동적계획법(Dynamic Programming)
 ---
 
@@ -20,18 +20,18 @@ DP문제는 계산한 값들을 어딘가에 저장해두고 다시 읽어오는
 DP는 "언제" 계산했는지와 "어떤"값인지 까지 메모리에 올려 둔다.
 
 문제를 독해하고
-아 몇 턴 지나면 이 값 또 써야하는데?? 
+아 몇 턴 지나면 이 값 또 써야하는데??
 싶으면 DP로 문제를 풀자!
 
 # 전체 코드
 
 ```javascript
 function solution(N) {
-  if(N === 1) return 4;
-  const squares = [1,1];
+  if (N === 1) return 4;
+  const squares = [1, 1];
   let count = 2;
 
-  while (N > count){
+  while (N > count) {
     squares.push(squares[count - 1] + squares[count - 2]);
     count++;
   }
