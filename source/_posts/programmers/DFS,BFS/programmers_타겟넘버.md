@@ -37,20 +37,19 @@ DFS는 트리가 있을 때 깊은를 우선으로하여
 
 ```javascript
 function solution(numbers, target) {
-    let count = 0;
-    const end = numbers.length-1;
+  let count = 0;
+  const end = numbers.length - 1;
 
-    const compare = (depth, added)=>{
-        if(depth<end){
-            compare(depth+1, added+numbers[depth+1]);
-            compare(depth+1, added-numbers[depth+1]);
-        }else if(added===target) {
-            count++;
-        }
+  const compare = (depth, added) => {
+    if (depth < end) {
+      compare(depth + 1, added + numbers[depth + 1]);
+      compare(depth + 1, added - numbers[depth + 1]);
+    } else if (added === target) {
+      count++;
     }
-    compare(0,numbers[0]);
-    compare(0,-numbers[0]);
-    return count;
-}
+  };
+  compare(0, numbers[0]);
+  compare(0, -numbers[0]);
+  return count;
 }
 ```
