@@ -1,6 +1,6 @@
 ---
 title: programmers N으로 표현
-date: 2020-02-24 12:06:08
+date: 2020-02-16 12:06:08
 tags:
   - 알고리즘
   - 프로그래머스
@@ -66,7 +66,7 @@ function solution(N, number) {
     }
     nUsing++;
   }
-  
+
   return -1;
 }
 
