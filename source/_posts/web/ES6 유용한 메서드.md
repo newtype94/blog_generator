@@ -1,5 +1,5 @@
 ---
-title: ES6에서 자주 쓰는 메서드(feat. 알고리즘 문제풀이)
+title: ES6에서 알면 좋은 문법(feat. 알고리즘 문제풀이)
 date: 2020-02-11 12:20:10
 tags:
   - javascript
@@ -43,6 +43,35 @@ letArr = constArr.reduce(); //가능
 
 constArr = constArr.map(); //불가능
 letArr = constArr.map(); //가능
+```
+
+## 초기화
+
+```javascript
+const input = [1, 2, 3, 4, 5];
+const allTrue = new Array(input.length).fill(true);
+
+console.log(allTrue); //[true, true, true, true, true]
+```
+
+## 객체, 배열 값 추출
+
+객체, 배열에서 값을 추출할 때
+위치와 매칭하여 값을 변수에 바로 저장할 수 있다.
+
+```javascript
+const [a, b, c] = [1, 2, 3];
+//const a = [1,2,3][0]
+//const b = [1,2,3][1]
+//const c = [1,2,3][2]
+
+const [d, e] = [4, 5, "add"];
+
+const { f, g, h } = { f: 6, g: 7, h: 8 };
+const { i, j } = { i: 9, j: 10, k: 11 };
+
+console.log(a, b, c, d, e, f, g, h, i, j);
+//1,2,3,4,5,6,7,8,9,10,11
 ```
 
 ## 큐와 스택처럼 사용하기
@@ -126,10 +155,10 @@ console.log(myArr); //[4,5]
 const fiveNums = [11, 22, 33, 44, 55];
 const ten = 10;
 
-let sum = 0;
 let namuzi = 0;
 
-sum = fiveNums.reduce((acc, curr, currIdx, array) => {
+//콜백함수는 당연히 전역 변수(namuzi)도 건드릴 수 있다.
+let sum = fiveNums.reduce((acc, curr, currIdx, array) => {
   acc += curr;
   namuzi += curr % ten;
   return acc;
@@ -153,7 +182,7 @@ for (let i = 0; i < fiveNums.length; i++) {
   console.log(fiveNums);
 }
 
-fiveNums((data, index, array) => {
+fiveNums((item, index, array) => {
   console.log(index);
   console.log(item);
   console.log(array);
@@ -165,3 +194,37 @@ fiveNums((data, index, array) => {
 # Object
 
 # set
+
+## set 선언
+
+set 선언시 배열이 input으로 필요하다.
+
+```javascript
+const mySet = new Set([1, 2, 2, 3, 3, 4, 4]);
+console.log(mySet); //set {1,2,3,4}
+
+console.log(mySet.size); //3
+console.log(mySet.has(1)); //true
+mySet.add(5);
+console.log(mySet); //set {1,2,3,4,5}
+mySet.delete(5);
+console.log(mySet); //set {1,2,3,4}
+```
+
+## set <=> array
+
+보통 set에는 forEach를 제외하면 array에서 유용하게 쓰는 메서드를 지원하지 않는다.
+"..."를 활용하여 array로 임시로 형 변환을 하고 array 메서드를 빌릴 수 있다.
+
+[set 표준 문법](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Set)
+[array 표준 문법](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
+```javascript
+const mySet = new Set([1, 2, 2, 3, 3, 4, 4]);
+
+const tmp = [...mySet];
+console.log(tmp); //[1,2,3,4]
+
+const newSet = new Set([...mySet].sort((a, b) => a - b).slice(0, 2));
+//가장 작은 두 요소를 뽑기 위해 잠깐 배열의 형태를 빌린다고 생각하면 된다.
+```

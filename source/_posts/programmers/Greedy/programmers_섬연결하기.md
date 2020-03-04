@@ -39,7 +39,8 @@ category:
 4-1 : 3
 
 이 경우 0부터 시작하면 2 4 5 6 간선을 건너갈 것이다.
-그러나 3-4 대신 4-1을 연결하는 것이 더 최적의 경로이므로 정답을 도출하지 못한다.
+그러나 3-4 대신 4-1을 연결하는 것이 더 최적의 경로이므로
+이 방법으로는 정답을 도출할 수 없다.
 
 ## 간선을 기준으로
 
@@ -53,14 +54,15 @@ category:
 
 위 그래프에서 1 두 개를 먼저 잇고 9를 이어야 종료될 것이다.
 그런데 1 두 개를 이었을 때 이미 모든 노드를 방문한 시점이 되는데,
-이것을 종료 타이밍과 별개로 생각해야 한다.
-연결된 노드들을 별도의 섬으로 보고
-하나의 섬에 모든 노드가 들어와 이어졌을 때 종료해야 한다.
+이것은 종료 타이밍과 별개로 생각해야 한다.
+일단 연결된 노드 집단을 각각 별도의 섬으로 봐야하고,
+모든 섬들이 이어져 하나의 섬이 되었을 때(섬에 모든 노드가 들어왔을때) 종료해야 한다.
 
 # 전체 코드
 
 ```javascript
 function solution(n, costs) {
+  if (n === 1) return 0;
   costs.sort((a, b) => a[2] - b[2]);
 
   const tmp = costs.shift();
@@ -74,14 +76,14 @@ function solution(n, costs) {
     if ([...con].some(v => v.has(a) && v.has(b))) continue;
     sum += val;
 
-    const waA = [...con].find(v => v.has(a));
-    if (waA) con.delete(waA);
-    const waB = [...con].find(v => v.has(b));
-    if (waB) con.delete(waB);
+    const conA = [...con].find(v => v.has(a));
+    if (conA) con.delete(conA);
+    const conB = [...con].find(v => v.has(b));
+    if (conB) con.delete(conB);
 
-    if (waA && waB) con.add(new Set([...waA, ...waB]));
-    else if (waA) con.add(new Set([...waA, b]));
-    else if (waB) con.add(new Set([...waB, a]));
+    if (conA && conB) con.add(new Set([...conA, ...conB]));
+    else if (conA) con.add(new Set([...conA, b]));
+    else if (conB) con.add(new Set([...conB, a]));
     else con.add(new Set([a, b]));
   }
 
