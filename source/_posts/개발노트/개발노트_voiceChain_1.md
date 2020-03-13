@@ -46,13 +46,15 @@ category:
    대부분의 스마트폰은 24시간 전원이 유지되고 있고, 24시간 인터넷 망에 연결되어 있다.
    또한 mobile의 capacity도 점점 커지고 있다. (갤럭시 S10+ 기준 최대 1TB)
 2. nodejs는 유용한 npm 모듈을 무료로 사용할 수 있다는 것이 큰 장점이다.
-   (녹음 component, hash 계산 모듈, 소켓 모듈 등 사용 예정)
+   (녹음 component, hash 계산 모듈, socket 등 사용 예정)
 3. sqlite로 클라이언트 단에 블록을 저장할 수 있다.
 
-## 중앙 서버 - expressJS, SocketIO
+## 백엔드 - AWS Lambda, websocket
 
 1. 토렌트와 비슷하게 각 노드의 위치 정보를 담아두고, 빠른 속도로 응답해야 한다.
-2. 필요하다면 pm2와 nginx를 사용하여 얼마든지 로드밸런싱을 할 수 있다.
+2. serverless 백엔드
+3. Auto 로드밸런싱
+4. 합리적인 가격
 
 ## 데이터베이스 - redis vs mariadb caching
 
