@@ -10,7 +10,6 @@ category:
 
 알고리즘 문제를 풀며 많이 사용했던 JS 기술들을 정리해보았다.
 코테에서 파이썬만큼 강력하진 않지만, JS도 익숙해지면 충분히 좋은 언어다.
-취준생분들에게 많은 도움이 되었으면..
 
 # Array
 
@@ -227,4 +226,26 @@ console.log(tmp); //[1,2,3,4]
 
 const newSet = new Set([...mySet].sort((a, b) => a - b).slice(0, 2));
 //가장 작은 두 요소를 뽑기 위해 잠깐 배열의 형태를 빌린다고 생각하면 된다.
+```
+
+# Math
+
+## min, max
+
+Math.min(1,2,3) => 1
+Math.max(1,2,3) => 3
+
+```javascript
+//배열은 바로 넣을 수 없다.
+const arr = [1, 2, 3];
+
+//요소만 넣어야 한다.
+let num = Math.min(...arr);
+
+//가끔 비교해서 작은 경우만 넣고 싶을 때가 있다.
+const zero = 0;
+if (zero < num) zero = num;
+
+//위처럼 해도 좋지만 가독성을 위해 아래처럼도 많이 쓴다.
+num = Math.min(zero, num);
 ```
