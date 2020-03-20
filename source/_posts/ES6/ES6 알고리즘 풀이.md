@@ -2,10 +2,9 @@
 title: ES6에서 알면 좋은 문법(feat. 알고리즘 문제풀이)
 date: 2020-02-11 12:20:10
 tags:
-  - javascript
+  - Javascript
 category:
-  - web
-  - javascript
+  - ES6
 ---
 
 알고리즘 문제를 풀며 많이 사용했던 JS 기술들을 정리해보았다.
