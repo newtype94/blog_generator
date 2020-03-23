@@ -1,5 +1,5 @@
 ---
-title: kakao n진수 게임
+title: 카카오 blind 2018 n진수 게임
 date: 2020-03-20 17:27:10
 tags:
   - 알고리즘
@@ -8,6 +8,8 @@ category:
   - 카카오 blind test
   - 2018
 ---
+
+[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/17687)
 
 # 문제 풀이
 
