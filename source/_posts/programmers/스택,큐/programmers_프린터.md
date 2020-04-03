@@ -9,6 +9,8 @@ category:
   - 스택, 큐
 ---
 
+[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/42587)
+
 # 분류 / 레벨 / 언어
 
 스택,큐 / LV.2 / Javscript

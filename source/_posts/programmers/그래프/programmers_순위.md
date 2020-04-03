@@ -9,6 +9,8 @@ category:
   - 그래프
 ---
 
+[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/49191)
+
 # 분류 / 레벨 / 언어
 
 그래프 / LV.3 / Javscript
@@ -18,6 +20,9 @@ category:
 ## 인접 행렬
 
 인접 행렬 adjacent matrix를 사용한다.
+
+[인접 행렬](https://newtype94.github.io/2020/03/15/programmers/%EA%B7%B8%EB%9E%98%ED%94%84/programmers_%EA%B0%80%EC%9E%A5%EB%A8%BC%EB%85%B8%EB%93%9C/#%EC%9D%B8%EC%A0%91%ED%96%89%EB%A0%AC)
+
 (행,열)을 (a,b)라고 할 때 a가 b를 이기면 1, a가 b에게 지면 -1을 저장한다.
 비기는 경우는 없으므로 생각하지 않는다.
 a와 b의 승패를 도저히 알 수 없을 경우 0(default)을 저장한다.
