@@ -9,6 +9,8 @@ category:
   - 완전탐색
 ---
 
+[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/42841)
+
 # 분류 / 레벨 / 언어
 
 완전탐색 / LV.2 / Javscript
@@ -28,43 +30,41 @@ input과 compare(numA, numB)함수의 결과값을 참고하여 답안을 줄여
 
 ```javascript
 function solution(baseball) {
-  const oneNine = "123456789".split("");
-  let numSet = [];
+  const full = [];
 
-  oneNine.forEach((hun, hunIdx) => {
-    oneNine.forEach((ten, tenIdx) => {
-      if (tenIdx !== hunIdx)
-        oneNine.forEach((one, oneIdx) => {
-          if (oneIdx !== tenIdx && oneIdx !== hunIdx)
-            numSet.push(hun * 100 + ten * 10 + one * 1);
-        });
-    });
-  });
+  for (let a = 1; a < 10; a++) {
+    for (let b = 1; b < 10; b++) {
+      if (a === b) continue;
+      for (let c = 1; c < 10; c++) {
+        if (a === c || b === c) continue;
+        full.push(a * 100 + b * 10 + c * 1);
+      }
+    }
+  }
 
   const compare = (numA, numB) =>
     numA
       .toString()
       .split("")
       .reduce(
-        (acc, curr, currIdx) => {
+        (acc, cur, curIdx) => {
           numB
             .toString()
             .split("")
             .forEach((v, i) => {
-              if (v === curr) i === currIdx ? acc[0]++ : acc[1]++;
+              if (v === cur) i === curIdx ? acc[0]++ : acc[1]++;
             });
           return acc;
         },
         [0, 0]
       );
 
-  return baseball.reduce((a, c) => {
-    const temp = [];
-    a.forEach(num => {
-      if (compare(num, c[0])[0] === c[1] && compare(num, c[0])[1] === c[2])
-        temp.push(num);
-    });
-    return temp;
-  }, numSet).length;
+  return baseball.reduce(
+    (acc, game) =>
+      acc.filter(
+        num => compare(num, game[0]).join("") === "" + game[1] + game[2]
+      ),
+    full
+  ).length;
 }
 ```
