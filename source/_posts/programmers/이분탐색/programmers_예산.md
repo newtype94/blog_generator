@@ -9,6 +9,8 @@ category:
   - 이분탐색
 ---
 
+[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/43237)
+
 # 분류 / 레벨 / 언어
 
 이분탐색 / LV.3 / Javscript
@@ -41,7 +43,6 @@ ex)
 
 다시 보니 처음에 그냥 sort()를 호출했다.
 그냥 sort()를 하면, [1,3,2,10000]가 문자열 순으로 [1,10000,2,3] 이렇게 정렬된다.
-(19 하반기 코테도 이거 때문에 떨어진듯...)
 sort((a,b)=>a-b)로 숫자오름차순 정렬!
 
 # 전체 코드
@@ -56,11 +57,10 @@ function solution(budgets, M) {
   let left = Math.floor(M / budgets.length); //이론적 최소치
   let right = budgets[budgets.length - 1]; //이론적 최대치
 
-  //아래부터는 left로 거를예정이라 right를 최초에 한번 걸러주어야함
   if (sumByLimit(right) <= M) return right;
 
   while (1) {
-    if (sumByLimit(left + 1) > M) return left;
+    if (right - left === 1) return left;
     const mid = Math.floor((left + right) / 2);
     sumByLimit(mid) <= M ? (left = mid) : (right = mid);
   }

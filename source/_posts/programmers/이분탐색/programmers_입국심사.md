@@ -9,6 +9,8 @@ category:
   - 이분탐색
 ---
 
+[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/43238)
+
 # 분류 / 레벨 / 언어
 
 이분탐색 / LV.3 / Javscript
