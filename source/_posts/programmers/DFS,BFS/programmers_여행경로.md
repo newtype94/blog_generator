@@ -33,28 +33,26 @@ dfs(초기 상태, 초기 정보)
 ```javascript
 function solution(tickets) {
   const routes = [];
-
   const next = (now, remains, route) => {
-    if (remains.length > 0) {
-      remains
-        .filter(v => v[0] === now)
-        .forEach((remain, i) => {
-          let temp = remains.slice();
-          temp.splice(i, 1);
-          next(remain[1], temp, route.concat(now));
-        });
-    } else {
+    if (remains.length === 0) {
       routes.push(route.concat(now));
+      return;
     }
+    remains.forEach((remain, i) => {
+      if (remain[0] === now) {
+        let remainsCopy = remains.slice();
+        remainsCopy.splice(i, 1);
+        next(remain[1], remainsCopy, route.concat(now));
+      }
+    });
   };
 
-  tickets
-    .filter(v => v[0] === "ICN")
-    .forEach((ticket, i) => {
-      let temp = tickets.slice();
-      temp.splice(i, 1);
-      next(ticket[1], temp, ["ICN"]);
-    });
+  tickets.forEach((ticket, i) => {
+    if (ticket[0] === "ICN") {
+      let ticketsCopy = tickets.slice();
+      next(ticketsCopy.splice(i, 1)[0][1], ticketsCopy, ["ICN"]);
+    }
+  });
 
   return routes
     .map(route => route.join(","))

@@ -9,6 +9,8 @@ category:
   - 탐욕법(Greedy)
 ---
 
+[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/42861)
+
 # 분류 / 레벨 / 언어
 
 탐욕법(Greedy) / LV.3 / Javscript
@@ -50,7 +52,7 @@ category:
 
 간단해보이지만 3번이 어렵다.
 
-[] -- 1 -- [] -- 9 --[] -- 1 -- []
+[노드] -- 1 -- [노드] -- 9 -- [노드] -- 1 -- []
 
 위 그래프에서 1 두 개를 먼저 잇고 9를 이어야 종료될 것이다.
 그런데 1 두 개를 이었을 때 이미 모든 노드를 방문한 시점이 되는데,
@@ -71,8 +73,7 @@ function solution(n, costs) {
 
   while (1) {
     if ([...con][0].size === n) break;
-    const tmp = costs.shift();
-    const [a, b, val] = tmp;
+    const [a, b, val] = costs.shift();
     if ([...con].some(v => v.has(a) && v.has(b))) continue;
     sum += val;
 
