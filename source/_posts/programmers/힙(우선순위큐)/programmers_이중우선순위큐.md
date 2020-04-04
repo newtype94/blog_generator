@@ -9,6 +9,8 @@ category:
   - 힙(우선순위큐)
 ---
 
+[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/42628)
+
 # 분류 / 레벨 / 언어
 
 힙(우선순위큐) / LV.3 / Javscript

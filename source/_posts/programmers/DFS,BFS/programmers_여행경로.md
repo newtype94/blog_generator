@@ -9,6 +9,8 @@ category:
   - DFS,BFS
 ---
 
+[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/43164)
+
 # 분류 / 레벨 / 언어
 
 DFS,BFS / LV.3 / Javscript
@@ -31,28 +33,31 @@ dfs(초기 상태, 초기 정보)
 ```javascript
 function solution(tickets) {
   const routes = [];
-  const next = (hope, remains, route) => {
+
+  const next = (now, remains, route) => {
     if (remains.length > 0) {
-      remains.forEach((remain, i) => {
-        if (hope === remain[0]) {
-          let remainsCopy = remains.concat();
-          next(remainsCopy.splice(i, 1)[0][1], remainsCopy, route.concat(hope));
-        }
-      });
+      remains
+        .filter(v => v[0] === now)
+        .forEach((remain, i) => {
+          let temp = remains.slice();
+          temp.splice(i, 1);
+          next(remain[1], temp, route.concat(now));
+        });
     } else {
-      routes.push(route.concat(hope));
+      routes.push(route.concat(now));
     }
   };
 
-  tickets.forEach((ticket, i) => {
-    if (ticket[0] === "ICN") {
-      let ticketsCopy = tickets.concat();
-      next(ticketsCopy.splice(i, 1)[0][1], ticketsCopy, ["ICN"]);
-    }
-  });
+  tickets
+    .filter(v => v[0] === "ICN")
+    .forEach((ticket, i) => {
+      let temp = tickets.slice();
+      temp.splice(i, 1);
+      next(ticket[1], temp, ["ICN"]);
+    });
 
   return routes
-    .map(route => route.join())
+    .map(route => route.join(","))
     .sort()[0]
     .split(",");
 }

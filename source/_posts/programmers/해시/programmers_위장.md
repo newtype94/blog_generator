@@ -9,6 +9,8 @@ category:
   - 해시
 ---
 
+[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/42578)
+
 # 분류 / 레벨 / 언어
 
 해시 / LV.2 / Javscript
@@ -39,13 +41,15 @@ category:
 
 ```javascript
 function solution(clothes) {
-  let result = 1;
-
   const temp = new Object();
+
   clothes.map(data => {
     if (temp[data[1]]) temp[data[1]] += 1;
     else temp[data[1]] = 1;
   });
+
+  let result = 1;
+
   for (let key in temp) {
     result *= temp[key] + 1;
   }

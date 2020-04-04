@@ -9,6 +9,8 @@ category:
   - DFS,BFS
 ---
 
+[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/43165)
+
 # 분류 / 레벨 / 언어
 
 DFS,BFS / LV.2 / Javscript
@@ -17,7 +19,7 @@ DFS,BFS / LV.2 / Javscript
 
 ## 개요
 
-DFS는 트리가 있을 때 깊은를 우선으로하여
+DFS는 트리가 있을 때 자손 노드를 우선으로하여
 탐색하여 모든 노드를 탐색/검증한다.
 
 이 때, 노드는 physical한 것만을 의미하지는 않는다.

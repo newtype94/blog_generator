@@ -9,55 +9,45 @@ category:
   - 해시
 ---
 
+[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/42579)
+
 # 분류 / 레벨 / 언어
 
 해시 / LV.3 / Javscript
 
 # 설명
 
-자료구조는 2개를 썼다. (genreHits, songHits)
+자료구조는 2개를 썼다. (songs, genPlays)
+둘 다 "key = 장르"인 Object이다.
 
-1. 노래 한 곡에 대한 정보들을
-   2번에 거쳐 input으로 주었으므로 묶어주는 과정이 필요하다.
-   => songHits 객체에 {장르1 : [{1번트랙}, {2번트랙}]}와 같이 넣어준다.
-2. 장르에 대해 플레이수 누적을 해야한다.
-   => songHits에서 장르별로 reduce()를 돌려 플레이수를 누적한 후,
-   genreHits에 [{1번 장르}, {2번 장르}]와 같이 넣어준다.
+1. genres에 대해 for문을 돌며 songs, genPlays를 채워준다.
+2. songs는 각 장르에 대해 배열을 가지고 있으며 배열의 0번 index, 1번 index만을 검증하며 채운다.
+3. genPlays는 각 장르에 대해 플레이된 총합을 누적한다.
+
+마지막으로 genPlays의 value가 큰 순으로 장르(key)를 정렬하고,
+songs에서 장르별로 최대 2개씩 가지고 answer에 합친다.
 
 # 전체 코드
 
 ```javascript
 function solution(genres, plays) {
-  const answer = [];
-  const genreHits = new Array();
-  const songHits = new Object();
+  const songs = {};
+  const genPlays = {};
 
-  genres.forEach((item, index) => {
-    songHits[item]
-      ? songHits[item].push({ index: index, plays: plays[index] })
-      : (songHits[item] = [{ index: index, plays: plays[index] }]);
+  genres.forEach((genre, idx) => {
+    if (!songs[genre]) songs[genre] = [idx];
+    else if (plays[idx] > plays[songs[genre][0]]) songs[genre].unshift(idx);
+    else if (!plays[songs[genre][1]] || plays[idx] > plays[songs[genre][1]]) {
+      songs[genre][1] = idx;
+    }
+
+    genPlays[genre]
+      ? (genPlays[genre] += plays[idx])
+      : (genPlays[genre] = plays[idx]);
   });
 
-  for (let key in songHits) {
-    genreHits.push({
-      genre: key,
-      plays: songHits[key].reduce((acc, curr) => acc + curr.plays, 0)
-    });
-  }
-  genreHits.sort((a, b) => b.plays - a.plays);
-
-  while (genreHits.length !== 0) {
-    let temp = songHits[genreHits.shift().genre].sort(
-      (a, b) => b.plays - a.plays
-    );
-    if (temp.length > 1) {
-      answer.push(temp[0].index);
-      answer.push(temp[1].index);
-    } else {
-      answer.push(temp[0].index);
-    }
-  }
-
-  return answer;
+  return Object.keys(genPlays)
+    .sort((a, b) => genPlays[b] - genPlays[a])
+    .reduce((acc, cur) => acc.concat(songs[cur].slice(0, 2)), []);
 }
 ```

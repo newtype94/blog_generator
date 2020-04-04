@@ -9,14 +9,15 @@ category:
   - DFS,BFS
 ---
 
+[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/43162)
+
 # 분류 / 레벨 / 언어
 
-DFS,BFS / LV.2 / Javscript
+DFS,BFS / LV.3 / Javscript
 
 # 설명
 
-마찬가지로 DFS로 푼다.
-단, 직전의 타겟넘버 문제는 처음 DFS 호출이 정적으로 정해져 있었으나,
+같은 카테고리의 타겟넘버 문제는 처음 DFS 호출이 정적으로 정해져 있었으나,
 이 문제는 while문안에서 동적으로 DFS를 호출한다.
 그 이유는
 
