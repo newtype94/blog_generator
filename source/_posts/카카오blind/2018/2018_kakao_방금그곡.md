@@ -1,5 +1,5 @@
 ---
-title: 카카오 blind 2018 압축
+title: 카카오 blind 2018 방금그곡
 date: 2020-04-10 14:01:14
 tags:
   - 알고리즘
