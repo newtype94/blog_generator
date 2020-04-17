@@ -13,6 +13,7 @@ category:
 
 피아노 웹이다.
 많은 악기를 지원해서 주로 신디사이저 웹이라고 소개하기도 했다.
+
 <img src="/image/typesound/main.JPG" width="60%" title="30px" alt="홈"></img>
 
 ## 운영 플랫폼(서비스 종료)
@@ -36,6 +37,7 @@ Git : [Github](https://github.com/newtype94/Typesound)
   2019.08 ~ 2019.09
 
 아래 사진들은 iwinv에서 실제 서버를 임대하고 도메인을 구입해 연동한 기록이다.
+
 <img src="/image/typesound/domain.jpg" width="60%" title="30px" alt="도메인"></img>
 <img src="/image/typesound/cloud.jpg" width="60%" title="30px" alt="클라우드"></img>
 
