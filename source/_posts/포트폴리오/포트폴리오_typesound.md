@@ -1,5 +1,5 @@
 ---
-title: 포트폴리오 - typesound
+title: 포트폴리오 - Typesound
 date: 2020-01-13 13:30:31
 tags:
   - react.js
@@ -9,10 +9,10 @@ category:
   - 개인프로젝트
 ---
 
-# 빠른 소개
+# Typesound
 
 피아노 웹이다.
-많은 악기를 지원해서 어떤 곳에는 신디사이저 웹이라고 소개하기도 했다.
+많은 악기를 지원해서 주로 신디사이저 웹이라고 소개하기도 했다.
 <img src="/image/typesound/main.JPG" width="60%" title="30px" alt="홈"></img>
 
 ## 운영 플랫폼(서비스 종료)
@@ -66,17 +66,12 @@ const chordNotes: { [x: string]: TSchordEnum[][] } = {
   [TSchordVariationEnum.CMajor]: [
     [TSchordEnum.C, TSchordEnum.E, TSchordEnum.G],
     [],
-    []
+    [],
   ],
   [TSchordVariationEnum.Cm]: [
     [TSchordEnum.C, TSchordEnum.Eb, TSchordEnum.G],
     [],
-    []
-  ],
-  [TSchordVariationEnum.Cm6]: [
-    [TSchordEnum.C, TSchordEnum.Eb, TSchordEnum.G, TSchordEnum.A],
     [],
-    []
   ],
   // ....
   // ( CDEFGAB ) x (major,m,m6,m7,aug,dim,2,6,7,sus2,sus4) => 77개 패턴
@@ -84,18 +79,13 @@ const chordNotes: { [x: string]: TSchordEnum[][] } = {
   [TSchordVariationEnum.B7]: [
     [TSchordEnum.B],
     [TSchordEnum.Eb, TSchordEnum.Gb, TSchordEnum.A],
-    []
-  ],
-  [TSchordVariationEnum.Bsus2]: [
-    [TSchordEnum.B],
-    [TSchordEnum.Db, TSchordEnum.Gb],
-    []
+    [],
   ],
   [TSchordVariationEnum.Bsus4]: [
     [TSchordEnum.B],
     [TSchordEnum.E, TSchordEnum.Gb],
-    []
-  ]
+    [],
+  ],
 };
 ```
 
@@ -112,9 +102,9 @@ midi의 음원을 pre-rendering하였고, MIT 저작권으로 제공한다.
 
 ## reactJS의 사용 이유
 
-기존의 피아노 웹들을 보면 대부분 flash를 사용하였고, 그나마 최신 웹이 jquery를 사용했다.
-reactJS의 "상태 관리"라는 메인 컨셉을 활용하여 개발하면 차별성이 있을 것이라고 생각했다.
-"키가 눌림"을 custom hook으로 정의하여, 문서객체마다 jquery onclick 이벤트를 연결할 일을 피했다.
+1. 기존의 피아노 웹들을 보면 대부분 flash를 사용하였고, 그나마 최신 웹이 jquery를 사용했다.
+2. ReactJS의 "상태 관리"라는 메인 컨셉을 활용하여 개발하면 차별성이 있을 것이라고 생각했다.
+3. "키가 눌림"을 custom hook으로 정의하여 문서객체마다 jquery onclick 이벤트를 연결할 일을 피했다.
 
 `/src/hooks/useKeyPress.ts`
 
