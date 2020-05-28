@@ -1,0 +1,51 @@
+---
+title: programmers sql JOIN
+date: 2020-05-23 17:15:22
+tags:
+  - 알고리즘
+  - 프로그래머스
+category:
+  - 프로그래머스 sql Kit
+---
+
+[문제 링크](https://programmers.co.kr/learn/courses/30/parts/17046)
+
+# 없어진 기록 찾기
+
+```sql
+SELECT A.ANIMAL_ID, A.NAME
+FROM ANIMAL_OUTS A LEFT JOIN ANIMAL_INS B ON A.ANIMAL_ID = B.ANIMAL_ID
+WHERE B.ANIMAL_ID IS NULL
+ORDER BY A.ANIMAL_ID
+```
+
+# 있었는데요 없었습니다
+
+```sql
+SELECT A.ANIMAL_ID, A.NAME
+FROM ANIMAL_OUTS A LEFT JOIN ANIMAL_INS B ON A.ANIMAL_ID = B.ANIMAL_ID
+WHERE A.DATETIME < B.DATETIME
+ORDER BY B.DATETIME
+```
+
+# 오랜 기간 보호한 동물(1)
+
+```sql
+SELECT A.NAME, A.DATETIME
+FROM ANIMAL_INS A LEFT JOIN ANIMAL_OUTS B ON A.ANIMAL_ID = B.ANIMAL_ID
+WHERE B.ANIMAL_ID IS NULL
+ORDER BY A.DATETIME
+LIMIT 3
+```
+
+# 보호소에서 중성화한 동물
+
+```sql
+SELECT B.ANIMAL_ID, B.ANIMAL_TYPE, B.NAME
+FROM ANIMAL_INS A LEFT JOIN ANIMAL_OUTS B ON A.ANIMAL_ID = B.ANIMAL_ID
+WHERE
+   (A.SEX_UPON_INTAKE = "Intact Male" OR A.SEX_UPON_INTAKE = "Intact Female") And
+   (B.SEX_UPON_OUTCOME != "Intact Male" AND B.SEX_UPON_OUTCOME != "Intact Female")
+ORDER BY B.ANIMAL_ID
+
+```
