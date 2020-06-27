@@ -33,7 +33,10 @@
 
 ## 논문(컨퍼런스)
 
-1. [부트스트랩을 이용한 반응형 웹 및 하이브리드 앱 개발](http://www.ndsl.kr/ndsl/search/detail/article/articleSearchResultDetail.do?cn=NPAP12621977&SITE=CLICK)  
-   공동저자, 한국정보처리학회, 2016
+1. [부트스트랩을 이용한 반응형 웹 및 하이브리드 앱 개발](http://www.ndsl.kr/ndsl/search/detail/article/articleSearchResultDetail.do?cn=NPAP12621977&SITE=CLICK)
+
+   - 한국정보처리학회 2016년도 추계학술발표대회 2016 Oct. 27, pp.738 - 741
+
 2. [JMeter 를 이용한 오픈소스 웹서버 성능 비교 연구](http://www.ndsl.kr/ndsl/search/detail/article/articleSearchResultDetail.do?cn=NPAP12896933)
-   공동저자, 한국정보처리학회, 2018
+
+   - 한국정보처리학회 2018년도 추계학술발표대회 2018 Oct. 31, pp.2 - 4
