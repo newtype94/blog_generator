@@ -56,18 +56,18 @@ Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et l
 ### Bold
 
 ```
-**rendered as bold text**
+**굵은 글씨 표기**
 ```
 
-**rendered as bold text**
+**굵은 글씨 표기**
 
 ### Italics
 
 ```
-_rendered as italicized text_
+_이탈리안 표기_
 ```
 
-_rendered as italicized text_
+_이탈리안 표기_
 
 ## Blockquotes
 
@@ -357,21 +357,3 @@ markdown 문법에 사용되는 특수 문자를 따로 표시하고 싶을 때
 | engine | engine to be used for processing templates. Handlebars is the default. |
 | ext    | extension to be used for dest files. |
 ```
-
-## Footnotes
-
-> Markdown footnotes are not officially defined by the [CommonMark][] specification. However, the feature is supported by [remarkable][] and other markdown parsers, and it's very useful when available.
-
-Markdown footnotes are denoted by an opening square bracket, followed by a caret, followed by a number and a closing square bracket: `[^1]`.
-
-```
-This is some text[^1] with a footnote reference link.
-```
-
-```
-[^1]: "This is a footnote"
-```
-
-### Inline footnotes
-
-Some [markdown parsers][remarkable] also support inline footnotes. `[^2 "This is an inline footnote"]`.

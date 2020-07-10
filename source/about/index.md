@@ -8,6 +8,7 @@
 
 개인프로젝트 [List](https://newtype94.github.io/categories/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4/%EA%B0%9C%EC%9D%B8%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/)
 협업프로젝트 [List](https://newtype94.github.io/categories/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4/%ED%98%91%EC%97%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/)
+졸업프로젝트 [List](https://newtype94.github.io/categories/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4/%EC%A1%B8%EC%97%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/)
 
 ## 어학
 
