@@ -1,5 +1,5 @@
 ---
-title: 개발 - markdown
+title: 개발 - Markdown
 date: 2020-07-05 16:11:50
 tags:
   - markdown
@@ -8,7 +8,7 @@ category:
   - markdown
 ---
 
-# Standard features
+# 표준 문법
 
 ## Headings
 
@@ -237,18 +237,18 @@ Content for chapter one.
 ## Images
 
 ```
-![고양이](../../image/고양이.jpg)
+![고양이](/image/고양이.jpg)
 ```
 
-![고양이](../../image/고양이.jpg)
+![고양이](/image/고양이.jpg)
 
 또는
 
 ```
-![고양이](../../image/고양이.jpg "고양이 사진입니다")
+![고양이](/image/고양이.jpg "고양이 사진입니다")
 ```
 
-![고양이](../../image/고양이.jpg "고양이 사진입니다")
+![고양이](/image/고양이.jpg "고양이 사진입니다")
 
 또는
 
@@ -260,10 +260,10 @@ Content for chapter one.
 
 그리고 id에 사진의 링크 정의하여 후술해야함
 
-[id]: ../../image/고양이.jpg "고양이 링크"
+[id]: /image/고양이.jpg "고양이 링크"
 
 ```
-[id]: ../../image/고양이.jpg "고양이 링크"
+[id]: /image/고양이.jpg "고양이 링크"
 ```
 
 ## Raw HTML
