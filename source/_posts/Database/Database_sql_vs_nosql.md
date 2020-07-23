@@ -67,3 +67,15 @@ category:
 - Graph
 
 - 그래프를 제외한 세 모델은 집합-지향(Aggregate-oriented) 모델
+
+# ORM
+
+## Object Relational Mapping
+
+1. DB의 schema를 class에 매핑. => DB mingration, 객체 생성
+2. query 대신 함수와 객체를 사용해 DB에 접근한다.(생산성 증가)
+
+## 도입
+
+1. 일단 nosql 보다 RDB가 더 유리한 상황일 때
+2. 객체 지향적인 코드로 직관적이고 생산적인 개발을 하고 싶을 때
