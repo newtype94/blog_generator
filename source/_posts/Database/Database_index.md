@@ -33,3 +33,23 @@ select는 빨라지지만 insert나 update는 느려진다.
 
 Index되는 각각의 양이 테이블이 가지고 있는 전체 데이터 양의 10에서 15프로 일때 이득이고,
 그 이상일 떈 풀스캔이 더 빠르다.
+
+## Index의 자료구조 = B tree
+
+- B 트리는 하나의 노드에 여러개의 데이터를 저장할 수 있다.
+- 하나의 노드에 최대로 저장할 수 있는 데이터의 수 = order(m)
+- 각 노드는 최대 m개의 자식을 가질 수 있다.
+- Root node와 leaf node를 제외한 모든 노드는 반드시 m/2 개의 자식 노드를 가져야 한다.
+- B 트리의 root node는 반드시 두 개 이상의 자식 노드를 가져야 한다.
+- 모든 leaf node는 같은 레벨에 위치해야 한다.
+
+## sql
+
+```sql
+CREATE INDEX index_name
+ON table_name (column1, column2, ...);
+
+--MySQL:
+ALTER TABLE table_name
+DROP INDEX index_name;
+```
