@@ -39,7 +39,6 @@ ex)
 
 이분탐색은 문제없이 짠 것 같은데
 정확성 케이스와 효율성 테스트에서 계속 한 개씩 통과가 안되었다.
-온갖 수정을 거듭한 끝에, 기본적인 것을 놓치고 있다는 생각이 들어 한줄한줄 로그를 찍어보았다.
 
 다시 보니 처음에 그냥 sort()를 호출했다.
 그냥 sort()를 하면, [1,3,2,10000]가 문자열 순으로 [1,10000,2,3] 이렇게 정렬된다.
@@ -51,7 +50,7 @@ sort((a,b)=>a-b)로 숫자오름차순 정렬!
 function solution(budgets, M) {
   budgets.sort((a, b) => a - b);
 
-  const sumByLimit = limit =>
+  const sumByLimit = (limit) =>
     budgets.reduce((acc, curr) => (curr <= limit ? acc + curr : acc + limit));
 
   let left = Math.floor(M / budgets.length); //이론적 최소치
