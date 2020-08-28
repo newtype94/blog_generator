@@ -1,8 +1,6 @@
 ## 학력
 
-[고려대학교 컴퓨터학과](http://cs.korea.ac.kr/cs/index.do)
-2014년 입학
-2020년 8월 졸업예정
+[고려대학교 컴퓨터학과](http://cs.korea.ac.kr/cs/index.do) 졸업 (2014 ~ 2020)
 
 ## 포트폴리오
 
