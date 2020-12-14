@@ -2,24 +2,18 @@
 
 [고려대학교 컴퓨터학과](http://cs.korea.ac.kr/cs/index.do) 졸업 (2014 ~ 2020)
 
-## 포트폴리오
+## 경력
 
-개인프로젝트 [List](https://newtype94.github.io/categories/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4/%EA%B0%9C%EC%9D%B8%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/)
-협업프로젝트 [List](https://newtype94.github.io/categories/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4/%ED%98%91%EC%97%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/)
-졸업프로젝트 [List](https://newtype94.github.io/categories/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4/%EC%A1%B8%EC%97%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/)
+LG CNS 재직중 (상암유플러스, 2020~)
 
 ## 어학
 
 토익 870 (2020.01.19, 613426)
 토익스피킹 150, Lv6 (2019.09.08, 989197)
 
-## 군 경력
+## 병역
 
-육군 [정보보호병](https://namu.wiki/w/%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%EB%B3%91) 복무(2016.10~2018.07)
-
-1. 관제 업무 : 매트리스를 통해 보안 로그와 내부망의 연결 상태 확인
-2. 관리 업무 : 방화벽의 정책과 로그를 점검하고, 백신 서버(CentOS)를 주기적으로 관리
-3. CERT 업무 : 전화 대기를 하며 CERT 임무 수행. 비상 상황부터 간단한 하드웨어 문제까지 Computer와 관련된 상황에 가능한 1차적으로 대응
+육군 [정보보호병](https://namu.wiki/w/%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%EB%B3%91) (2016.10~2018.07)
 
 ## 자격증
 
